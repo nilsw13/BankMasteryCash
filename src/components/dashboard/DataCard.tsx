@@ -6,10 +6,11 @@ interface DataCardProps {
     title: string,
     amount?: number | null,
     stats?: string | undefined,
+    totalAmount? : number | 0
 
 }
 
-function DataCard({ title, amount, stats }: DataCardProps) {
+function DataCard({ title, amount, stats, totalAmount }: DataCardProps) {
   return (
     <div>
 
@@ -20,7 +21,23 @@ function DataCard({ title, amount, stats }: DataCardProps) {
 
                 </CardHeader>
                 <CardContent >
-                <p className={`${(amount ?? 0) > 0 && title !== "Expenses" ? 'text-green-500' : 'text-red-500'} font-bold`}>{amount} €</p> 
+
+
+                  {totalAmount && title ==="Total balance" ? (
+
+                  <p className={`${(totalAmount ?? 0) > 0? 'text-green-500' : 'text-red-500'} font-bold`}>{totalAmount} €</p>
+
+                  ) : (
+
+                    <p className={`${(amount ?? 0) > 0 && title !== "Expenses" ? 'text-green-500' : 'text-red-500'} font-bold`}>{amount} €</p>
+                  )
+                  
+                  }
+              
+
+                {/** <p className={`${(amount ?? 0) > 0 && title !== "Expenses" ? 'text-green-500' : 'text-red-500'} font-bold`}>{amount} €</p> */}
+
+
                 <p className="mt-2 text-gray-500">{stats}</p>
                 </CardContent>
             </Card>

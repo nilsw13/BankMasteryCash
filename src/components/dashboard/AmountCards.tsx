@@ -8,7 +8,7 @@ function AmountCards() {
         {
             id:1,
             title : "Total balance",
-            amount: 5231.89,
+            amount: 0,
             stats: "+ 20% from last month" // need to change for dynamic data %
 
         },
@@ -35,6 +35,24 @@ function AmountCards() {
         }
     ]
 
+    const returnTotalAmount = () => {
+        
+        let totalAmount  = 0
+        let subAmount = 0
+        for (let i = 0; i < cards.length; i ++){
+            if (cards[i].title === "Expenses"){
+                subAmount = cards[i].amount;
+                totalAmount -= subAmount
+            }
+            totalAmount += cards[i].amount
+
+            
+
+        }
+        
+        return totalAmount - subAmount;
+    }
+
   return (
 
 
@@ -50,7 +68,7 @@ function AmountCards() {
               <div className="">
                   <DataCard
                 key={card.id}
-                title={card.title} amount={card.amount} stats={card.stats}/>
+                title={card.title} amount={card.amount} totalAmount={returnTotalAmount()} stats={card.stats}/>
               </div>
               
             ))}

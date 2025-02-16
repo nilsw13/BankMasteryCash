@@ -1,17 +1,8 @@
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import {
-    Table,
-    TableBody,
-    TableCaption,
-    TableCell,
-    TableFooter,
-    TableHead,
-    TableHeader,
-    TableRow,
-  } from "@/components/ui/table"
+import { Card, CardContent,CardHeader, CardTitle } from "@/components/ui/card"
+
 import { AnimatePresence , motion} from "framer-motion"
-import { ArrowBigRight, ArrowDown, ArrowLeftRight, ArrowUp, Building, CreditCard, DollarSign, HandCoinsIcon, Landmark, PiggyBank, PlusIcon, Wallet, Wallet2 } from "lucide-react"
+import { ArrowBigRight, ArrowDown, ArrowLeftRight, ArrowUp,CreditCard, Landmark, } from "lucide-react"
   
   const invoices = [
     {
