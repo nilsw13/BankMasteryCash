@@ -6,7 +6,7 @@ function FilterToggles() {
 
     const [toggleCliked, setToggleCliked] = useState<boolean>(false)
     const [expenseClicked, setExpenseClicked] = useState<boolean>(false)
-    const [bothClicked, setBothClicked] = useState<boolean>(false)
+    const [bothClicked, setBothClicked] = useState<boolean>(true)
     
 
    

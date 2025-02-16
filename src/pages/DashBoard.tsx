@@ -26,7 +26,7 @@ function DashBoard() {
         className="mb-32">
 
 
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center group">
 
 
             <div className="flex items-center gap-4">
@@ -34,7 +34,7 @@ function DashBoard() {
                 <AvatarImage src="https://github.com/nilsw13.png" alt="@shadcn" />
                 <AvatarFallback>CN</AvatarFallback>
               </Avatar>
-              <h1 className="text-white md:text-3xl font-bold text-xs">Dashboard</h1>
+              <h1 className="text-blue-300/60 group-hover:text-blue-300 md:text-3xl font-bold text-xs transition-all">Dashboard</h1>
             </div>
 
           <a href="" className="">

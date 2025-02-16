@@ -50,9 +50,9 @@ import FilterToggles from "./FilterToggles"
          exit={{opacity : 0}}
          transition={{duration : 2, delay:1}}
       >
-      <Card className="bg-transparent border-white/20 h-full">
-            <CardHeader>
-                <CardTitle className="text-xl font-bold text-slate-100/90">
+      <Card className="bg-transparent border-white/20 h-auto">
+            <CardHeader className="group">
+                <CardTitle className="font bold text-xl text-blue-300/60 group-hover:text-blue-300 transition-all">
                     
                    <div className="flex justify-between"> 
                     <h3>Recent transactions</h3>
@@ -64,11 +64,7 @@ import FilterToggles from "./FilterToggles"
                     </div>
 
 
-                    <div className="mt-20 flex items-center justify-center text-2xl text-center gap-2 ">
-                        
-                        <ArrowLeftRight className="text-blue-300 hover:text-blue-400 transition-all"/>  
-                        <p></p>
-                        </div>
+                 
                     
                     
                     </CardTitle>
@@ -80,13 +76,13 @@ import FilterToggles from "./FilterToggles"
 
                 
                 
-                <div className="w-full grid text-white border-2 border-white/20 gap-4 items-center p-3 text-center rounded-sm mx-auto  mb-6">
+                <div className="w-full mt-10 grid text-white border-2 border-white/20 gap-4 items-center p-3 text-center rounded-sm mx-auto  mb-6">
 
 
 
 
                     {invoices.map((inv) => (
-                      <div className="grid h-full w-full border text-start p-2 rounded-sm bg-blue-900/20  hover:bg-blue-900/40  border-white/20 ">
+                      <div className="grid h-full w-full border text-start p-2 rounded-sm bg-blue-900/20  hover:bg-blue-900/40  border-white/20 group ">
 
                           <div className="flex justify-between items-center">
                             <a href="" className="font-bold flex items-center gap-2 text-black">
@@ -109,15 +105,15 @@ import FilterToggles from "./FilterToggles"
                               <div className="flex flex-wrap items-center gap-2 ">
                                {
                                 inv.paymentMethod.startsWith("Cr")  ? (
-                                  <CreditCard className="text-blue-400/60 "/>
+                                  <CreditCard className="text-blue-400/60 group-hover:text-blue-400"/>
                                 ) : (
-                                  <Landmark className="text-blue-400/60 "/>
+                                  <Landmark className="text-blue-400/60 group-hover:text-blue-400"/>
                                 )
                                } 
-                              <p className="font-bold text-blue-500/60 text-xs md:text-sm items-center align-middle">{inv.title}</p>
+                              <p className="font-bold text-blue-500/60 group-hover:text-blue-400 text-xs md:text-sm items-center align-middle">{inv.title}</p>
                               </div>
 
-                              <p className={`${inv.totalAmount.startsWith('-')  ? 'text-red-500' : 'text-green-500'} font-bold`}>{inv.totalAmount} €</p>                      
+                              <p className={`${inv.totalAmount.startsWith('-')  ? 'text-red-500/60 group-hover:text-red-500' : 'text-green-500/60 group-hover:text-green-500'} transition-all font-bold`}>{inv.totalAmount} €</p>                      
                               
                           </div>
 
@@ -136,8 +132,8 @@ import FilterToggles from "./FilterToggles"
             
                         
                 </div>
-        <a href="" className="mt-10 ">
-          <Button className="border mx-auto p-6  w-full bg-blue-900/20  hover:bg-blue-900/40 transition-all  border-white/20 text-blue-600">
+        <a href="" className="mt-16">
+          <Button className="border mx-auto p-6  w-full bg-blue-900/20  hover:bg-blue-900/40 transition-all  border-white/20 text-blue-600 hover:text-blue-400">
             See more
           </Button>
         </a>
