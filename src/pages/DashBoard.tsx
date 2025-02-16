@@ -30,8 +30,8 @@ function DashBoard() {
             </div>
 
           <a href="" className="">
-            <Button className="p-4  w-10 h-10 bg-slate-100/90 hover:bg-white cursor-pointer  text-black rounded-full ">
-              <PlusIcon className="" />
+            <Button className="p-4  w-10 h-10 bg-blue-500/20  hover:bg-blue-500/30 cursor-pointer   rounded-full ">
+              <PlusIcon className="text-blue-500" />
             </Button>
             </a>
           </div>
