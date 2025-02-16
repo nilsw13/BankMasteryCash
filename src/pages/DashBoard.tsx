@@ -7,7 +7,7 @@ import {TransactionTable} from "@/components/dashboard/table/TransactionTable"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardTitle } from "@/components/ui/card"
-import { Plus } from "lucide-react"
+import { Plus, PlusIcon } from "lucide-react"
 
 
 function DashBoard() {
@@ -32,10 +32,11 @@ function DashBoard() {
               <h1 className="text-white md:text-3xl font-bold text-xs">Dashboard</h1>
             </div>
 
-
-            <Button className="bg-white hover:bg-white/90 text-black">
-              Add transaction
+          <a href="" className="">
+            <Button className="p-4  w-10 h-10 bg-slate-100/90 hover:bg-white cursor-pointer  text-black rounded-full ">
+              <PlusIcon className="" />
             </Button>
+            </a>
           </div>
 
 
