@@ -13,7 +13,7 @@ function DataCard({ title, amount, stats }: DataCardProps) {
   return (
     <div>
 
-            <Card className=" min-w-[250px] md:w-[380px] lg:w-[95%]  rounded-sm bg-transparent transition-all hover:bg-transparent ">
+            <Card className=" min-w-[250px] md:w-[380px] lg:w-[99%]  rounded-sm bg-transparent transition-all hover:bg-transparent ">
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                     <CardTitle className="text-white">{title}</CardTitle>
                     <DollarSign className="h-4 w-4 text-blue-500 hover:scale-105 transition-all" />

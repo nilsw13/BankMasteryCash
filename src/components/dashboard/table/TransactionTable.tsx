@@ -132,7 +132,7 @@ import { ArrowBigRight, ArrowDown, ArrowLeftRight, ArrowUp, Building, CreditCard
             
                         
                 </div>
-        <a href="" className="">
+        <a href="" className="mt-1">
           <Button className="border border-white/60 mx-auto w-full bg-slate-100/90 transition-all hover:bg-white text-black">
             See more
           </Button>
