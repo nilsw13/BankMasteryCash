@@ -10,6 +10,7 @@ import {
     TableHeader,
     TableRow,
   } from "@/components/ui/table"
+import { AnimatePresence , motion} from "framer-motion"
 import { ArrowBigRight, ArrowDown, ArrowLeftRight, ArrowUp, Building, CreditCard, DollarSign, HandCoinsIcon, Landmark, PiggyBank, PlusIcon, Wallet, Wallet2 } from "lucide-react"
   
   const invoices = [
@@ -47,7 +48,16 @@ import { ArrowBigRight, ArrowDown, ArrowLeftRight, ArrowUp, Building, CreditCard
   export function TransactionTable() {
     return (
       
-      
+
+
+      <AnimatePresence>
+
+      <motion.div className="h-full"
+         initial={{opacity : 0}}
+         animate={{opacity : 100}}
+         exit={{opacity : 0}}
+         transition={{duration : 2, delay:1}}
+      >
       <Card className="bg-transparent h-full">
             <CardHeader>
                 <CardTitle className="text-xl font-bold text-white">
@@ -139,6 +149,8 @@ import { ArrowBigRight, ArrowDown, ArrowLeftRight, ArrowUp, Building, CreditCard
         </a>
         </CardContent>
         </Card>
+        </motion.div>
+        </AnimatePresence>
     )
   }
   

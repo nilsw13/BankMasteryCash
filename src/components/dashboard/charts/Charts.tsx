@@ -1,5 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { ChartConfig, ChartContainer, ChartLegend, ChartLegendContent, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart'
+import { AnimatePresence, motion } from 'framer-motion'
 import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
 
 function Charts() {
@@ -27,7 +28,14 @@ function Charts() {
 
 
   return (
-    <div >
+
+    <AnimatePresence>
+    <motion.div 
+           initial={{opacity : 0}}
+           animate={{opacity : 100}}
+           exit={{opacity : 0}}
+           transition={{duration : 2, delay: 0.5}}
+    >
 
         <Card className=' bg-transparent  md:h-[604px] ' >
             <CardHeader>
@@ -60,7 +68,8 @@ function Charts() {
 
         </Card>
 
-    </div>
+    </motion.div>
+    </AnimatePresence>
   )
 }
 

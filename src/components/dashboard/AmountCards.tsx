@@ -1,3 +1,4 @@
+import { AnimatePresence, motion } from "framer-motion"
 import DataCard from "./DataCard"
 
 
@@ -36,7 +37,14 @@ function AmountCards() {
 
   return (
 
-        <div className="grid gap-2  md:grid-cols-2 lg:grid-cols-4 ">
+
+        <AnimatePresence>
+        <motion.div 
+        initial={{opacity : 0}}
+        animate={{opacity : 100}}
+        exit={{opacity : 0}}
+        transition={{duration : 2}}
+        className="grid gap-2  md:grid-cols-2 lg:grid-cols-4 ">
 
             {cards.map((card) => (
               <div className="">
@@ -44,10 +52,11 @@ function AmountCards() {
                 key={card.id}
                 title={card.title} amount={card.amount} stats={card.stats}/>
               </div>
+              
             ))}
 
-        </div>
-
+        </motion.div>
+        </AnimatePresence>
 )
 }
 

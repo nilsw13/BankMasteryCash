@@ -1,10 +1,19 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { AnimatePresence, motion } from "framer-motion"
 import { Building, DollarSign, EuroIcon, HandCoins, HandMetalIcon, PiggyBank, PlusIcon, TreePine, Wallet, Wallet2 } from "lucide-react"
 
 
 function SavingCard() {
   return (
-    <div>
+
+
+    <AnimatePresence>
+    <motion.div
+          initial={{opacity : 0}}
+          animate={{opacity : 100}}
+          exit={{opacity : 0}}
+          transition={{duration : 2, delay:1.5}}
+    >
 
         <Card className="bg-transparent h-full">
             <CardHeader>
@@ -108,7 +117,8 @@ function SavingCard() {
             </CardContent>
         </Card>
 
-    </div>
+    </motion.div>
+    </AnimatePresence>
   )
 }
 
