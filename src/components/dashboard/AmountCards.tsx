@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion"
 import DataCard from "./DataCard"
+import { ArrowDown, ArrowUp, VaultIcon, Wallet2 } from "lucide-react"
 
 
 function AmountCards() {
@@ -9,7 +10,10 @@ function AmountCards() {
             id:1,
             title : "Total balance",
             amount: 0,
-            stats: "+ 20% from last month" // need to change for dynamic data %
+            stats: "+ 20% from last month", // need to change for dynamic data %
+            icon: <div className="bg-blue-500/30  rounded-full p-2">
+            <Wallet2 className="text-blue-600"/>
+            </div>
 
         },
 
@@ -17,21 +21,30 @@ function AmountCards() {
             id:2,
             title: 'Income',
             amount: 3200, 
-            stats: "this month"
+            stats: "this month",
+            icon: <div className="bg-green-500/30  rounded-full p-2">
+            <ArrowUp className="text-green-600"/>
+            </div>
         }, 
 
         {
             id:3,
             title: "Expenses",
             amount: 1892, 
-            stats: "this month"
+            stats: "this month",
+            icon: <div className="bg-red-500/30  rounded-full p-2">
+            <ArrowDown className="text-red-600"/>
+            </div>
         }, 
 
         {
             id:4,
             title: "Savings", 
-            amount: 1308,
-            stats:" + 12, 3% from last month"  // need to change for dynamic data %
+            amount: 46003,
+            stats:" + 12, 3% from last month",  // need to change for dynamic data %
+            icon: <div className="bg-blue-500/30  rounded-full p-2">
+            <VaultIcon className="text-blue-600"/>
+            </div>
         }
     ]
 
@@ -58,18 +71,17 @@ function AmountCards() {
 
         <AnimatePresence>
         <motion.div 
-        initial={{opacity : 0}}
-        animate={{opacity : 100}}
-        exit={{opacity : 0}}
-        transition={{duration : 2}}
+        
         className="grid gap-2  md:grid-cols-2 lg:grid-cols-4 ">
 
             {cards.map((card) => (
-              <div className="">
+              <motion.div
+              
+              className="">
                   <DataCard
                 key={card.id}
-                title={card.title} amount={card.amount} totalAmount={returnTotalAmount()} stats={card.stats}/>
-              </div>
+                title={card.title} icon={card.icon} amount={card.amount} totalAmount={returnTotalAmount()} stats={card.stats}/>
+              </motion.div>
               
             ))}
 

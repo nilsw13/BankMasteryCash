@@ -1,9 +1,10 @@
 import AmountCards from "@/components/dashboard/AmountCards"
 import Charts from "@/components/dashboard/charts/Charts"
 import SavingCard from "@/components/dashboard/savings/SavingCard"
-import {TransactionTable} from "@/components/dashboard/table/TransactionTable"
+import {TransactionTable} from "@/components/dashboard/transactionTable/TransactionTable"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
+import { AnimatePresence, motion } from "framer-motion"
 import {  PlusIcon } from "lucide-react"
 
 
@@ -15,7 +16,14 @@ function DashBoard() {
 
 
         {/* Section header */}
-        <header className="mb-32">
+
+        <AnimatePresence>
+        <motion.header
+         initial={{opacity : 0}}
+         animate={{opacity : 100}}
+         exit={{opacity : 0}}
+         transition={{duration : 2}}
+        className="mb-32">
 
 
           <div className="flex justify-between items-center">
@@ -38,8 +46,8 @@ function DashBoard() {
 
 
 
-        </header>
-
+        </motion.header>
+        </AnimatePresence>
 
 
 

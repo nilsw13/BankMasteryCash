@@ -8,7 +8,7 @@ function SavingCard() {
 
             {
                 id: 1,
-                icons : <TreePine className="border-2 rounded-full h-12 w-12 p-2 bg-slate-900/90 text-white"/ >,
+                icons : <TreePine className="border-2  rounded-full h-12 w-12 p-2 bg-blue-900/20  hover:bg-blue-900/20  border-white/20 text-blue-600"/ >,
                 title:"Green investment",
                 taux : 0.75,
                 amount: 6000
@@ -16,7 +16,7 @@ function SavingCard() {
 
             {
                 id: 2,
-                icons : <PiggyBank className="border-2 rounded-full h-12 w-12 p-2 bg-slate-900/90 text-white"/>,
+                icons : <PiggyBank className="border-2  rounded-full h-12 w-12 p-2 bg-blue-900/20  hover:bg-blue-900/20  border-white/20 text-blue-600"/>,
                 title:"Daily savings",
                 taux : 0.75,
                 amount: 1653
@@ -25,7 +25,7 @@ function SavingCard() {
 
             {
                 id: 3,
-                icons : <ComputerIcon className="border-2 rounded-full h-12 w-12 p-2 bg-slate-900/90 text-white"/>,
+                icons : <ComputerIcon className="border-2  rounded-full h-12 w-12 p-2 bg-blue-900/20  hover:bg-blue-900/20  border-white/20 text-blue-600"/>,
                 title:"Techs assets",
                 taux : 4,
                 amount: 32000
@@ -33,7 +33,7 @@ function SavingCard() {
 
             {
                 id: 4,
-                icons : <Building className="border-2 rounded-full h-12 w-12 p-2 bg-slate-900/90 text-white"/>,
+                icons : <Building className="border-2  rounded-full h-12 w-12 p-2 bg-blue-900/20  hover:bg-blue-900/20  border-white/20 text-blue-600"/>,
                 title:"Real Estate",
                 taux : 6.75,
                 amount: 6350
@@ -58,14 +58,14 @@ function SavingCard() {
           transition={{duration : 2, delay:1.5}}
     >
 
-        <Card className="bg-transparent h-full">
+        <Card className="bg-transparent border-white/20 h-full">
                 <CardHeader>
-                            <CardTitle className="text-xl font-bold text-white">
+                            <CardTitle className="text-xl font-bold text-slate-100/90">
                                 
                             <div className="flex justify-between"> 
                                 <h3>Savings</h3>
                                 <a href="">
-                                    <PlusIcon className="w-8 h-8 border-2 rounded-sm p-1 bg-slate-100/90 transition-all hover:bg-white text-blue-600"/>
+                                    <PlusIcon className="w-8 h-8 border-2 rounded-sm p-1 bg-blue-900/20  hover:bg-blue-900/20  border-white/20 text-blue-600"/>
                                 </a>
                                 </div>
 
@@ -78,20 +78,20 @@ function SavingCard() {
                                 </CardTitle>
                 </CardHeader>
                 <CardContent className="flex flex-col">
-                        <div className="w-full grid text-white border-2 border-white/70 gap-4 items-center p-3 text-center rounded-sm mx-auto  mb-6">
+                        <div className="w-full grid text-white border-white/20 border gap-4 items-center p-3 text-center rounded-sm mx-auto  mb-6">
                             {savingCounts.map((acc)=> (
-                                <div className="grid h-full w-full border text-start p-1 rounded-sm bg-slate-100/90 transition-all hover:bg-white" >
+                                <div className="grid h-full w-full border text-start p-1 rounded-sm bg-blue-900/20  hover:bg-blue-900/40  border-white/20" >
 
                                 <div key={acc.id} className="flex justify-between items-center ">
-                                <a href="" className="font-bold flex items-center gap-2 text-black">
-                                    {acc.icons}
+                                <a href="" className="font-bold flex items-center gap-2 text-blue-400/60">
+                                    <div className="border-transparent pl-2  pt-2 pb-1 ">{acc.icons}</div>
                                     {acc.title}
                                 </a>
-                                <p className="font-bold text-sm whitespace-nowrap text-green-500">{acc.amount} $</p>
+                                <p className="font-bold pr-2 text-md whitespace-nowrap text-green-500">{acc.amount} $</p>
 
                                 </div>
                             
-                                <p className="text-stone-900/60 ml-14 text-xs">{acc.taux} %</p>
+                                <p className="text-blue-400/60 ml-16 text-xs">{acc.taux} %</p>
 
                             </div>
                             ))}

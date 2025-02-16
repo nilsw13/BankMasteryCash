@@ -18,11 +18,11 @@ function Charts() {
       const chartConfig = {
         incomes: {
           label: "incomes",
-          color: "var(--chart-2)",
+          color: "var(--success-chart)",
         },
         expenses: {
           label: "expenses",
-          color: "var(--chart-1)",
+          color: "var(--destructive-chart)",
         },
       } satisfies ChartConfig
 
@@ -37,9 +37,9 @@ function Charts() {
            transition={{duration : 2, delay: 0.5}}
     >
 
-        <Card className=' bg-transparent  md:h-[604px] ' >
+        <Card className=' bg-transparent border-white/20 border md:h-[655px] ' >
             <CardHeader>
-                <CardTitle className='font bold text-xl text-white'>Spending / Incomes overview</CardTitle>
+                <CardTitle className='font bold text-xl text-slate-100/90'>Spending / Incomes overview</CardTitle>
                 <CardDescription>
                     Showing total of incomes and spending for the last 6 months
                 </CardDescription>
