@@ -1,13 +1,10 @@
 import AmountCards from "@/components/dashboard/AmountCards"
 import Charts from "@/components/dashboard/charts/Charts"
-import DataCard from "@/components/dashboard/DataCard"
-import DashboardHeader from "@/components/dashboard/header/DashboardHeader"
 import SavingCard from "@/components/dashboard/savings/SavingCard"
 import {TransactionTable} from "@/components/dashboard/table/TransactionTable"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardTitle } from "@/components/ui/card"
-import { Plus, PlusIcon } from "lucide-react"
+import {  PlusIcon } from "lucide-react"
 
 
 function DashBoard() {
@@ -26,7 +23,7 @@ function DashBoard() {
 
             <div className="flex items-center gap-4">
               <Avatar>
-                <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+                <AvatarImage src="https://github.com/nilsw13.png" alt="@shadcn" />
                 <AvatarFallback>CN</AvatarFallback>
               </Avatar>
               <h1 className="text-white md:text-3xl font-bold text-xs">Dashboard</h1>
