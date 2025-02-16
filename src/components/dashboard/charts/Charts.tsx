@@ -37,7 +37,7 @@ function Charts() {
                 </CardDescription>
             </CardHeader>
             <CardContent>
-        <ChartContainer config={chartConfig} className='max-w-[100%] h-[300px] mt-20 max-h-[620px] mx-auto border rounded-md p-10'>
+        <ChartContainer config={chartConfig} className='min-w-[90%] max-w-[100%] h-[300px] mt-20 max-h-[620px] mx-auto  rounded-md p-10'>
           <BarChart accessibilityLayer data={chartData}>
             <CartesianGrid vertical={false} />
             <XAxis
