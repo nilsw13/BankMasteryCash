@@ -1,9 +1,9 @@
 import { AnimatePresence, motion } from "framer-motion"
-import DataCard from "./DataCard"
+import DataCard from "../DataCard"
 import { ArrowDown, ArrowUp, VaultIcon, Wallet2 } from "lucide-react"
 
 
-function AmountCards() {
+function AmountCardsSection() {
 
     const cards = [
         {
@@ -90,4 +90,4 @@ function AmountCards() {
 )
 }
 
-export default AmountCards
+export default AmountCardsSection
