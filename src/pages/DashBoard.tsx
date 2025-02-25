@@ -8,31 +8,22 @@ import AmountCardsSection from "@/components/dashboard/sections/AmountCardsSecti
 
 function DashBoard() {
     return (
-      // Conteneur principal - définit la structure globale
-      <div className="min-h-screen  p-4 md:p-8">
+     
+      <div className="  p-4 md:p-8">   // Conteneur principal - définit la structure globale
 
 
 
-        {/* Section header */}
+        
 
-        <AnimatePresence>
-          <motion.header
-            initial={{opacity : 0}}
-            animate={{opacity : 100}}
-            exit={{opacity : 0}}
-            transition={{duration : 2}}
-          className="mb-32">
-
-             <HeaderDashboard/>
-
-          </motion.header>
+        <AnimatePresence> {/* Section header */}
+          
         </AnimatePresence>
 
 
 
   
-        {/* Section Cartes de montants */}
-        <section className="mb-8 ">
+       
+        <section className="mb-8 ">   {/* Section Cartes de montants */}
           <div >
             <AmountCardsSection />
           </div>
@@ -41,8 +32,8 @@ function DashBoard() {
 
 
   
-        {/* Section Graphiques */}
-        <section className="mb-8 ">
+        
+        <section className="mb-8 ">  {/* Section Graphiques */}
           <ChartSection/>
         </section>
 
