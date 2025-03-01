@@ -19,7 +19,7 @@ import { useTransaction } from "@/hooks/use-transactions"
 
     const {transactions} = useTransaction();
     console.log("transactions :" , transactions.map((transac) => (
-      transac.amount
+      transac.paymentMethod
     )));
     
   
@@ -89,7 +89,7 @@ import { useTransaction } from "@/hooks/use-transactions"
                               
                               <div className="flex flex-wrap items-center gap-2 ">
                                {
-                                inv.paymentMethod.startsWith("Cr")  ? (
+                                inv.paymentMethod.startsWith("cr")  ? (
                                   <CreditCard className="text-blue-400/60 group-hover:text-blue-400"/>
                                 ) : (
                                   <Landmark className="text-blue-400/60 group-hover:text-blue-400"/>
