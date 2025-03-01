@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { AnimatePresence, motion } from "framer-motion"
-import { Building, ComputerIcon, PiggyBank, PlusIcon, TreePine,  Wallet2 } from "lucide-react"
+import { Building, ComputerIcon, PiggyBank, PlusIcon, TreePine } from "lucide-react"
 
 
 function SavingCard() {

@@ -2,42 +2,27 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent,CardHeader, CardTitle } from "@/components/ui/card"
 
 import { AnimatePresence , motion} from "framer-motion"
-import { ArrowBigRight, ArrowDown, ArrowLeftRight, ArrowUp,ArrowUpDown,CreditCard, Landmark, } from "lucide-react"
+import {  ArrowDown, ArrowUp,CreditCard, Landmark, } from "lucide-react"
 import FilterToggles from "./FilterToggles"
-  
-  const invoices = [
-    {
-      id:1,
-      date: new Date(),
-      title: "Salaires",
-      totalAmount: "+ $2150.00",
-      paymentMethod: "Credit Card",
-    },
-    {
-      id:1,
-      date: new Date(),
-      title: "Courses",
-      totalAmount: "- $150.00",
-      paymentMethod: "Credit Card",
-    },
-    {
-      id:1,
-      date: new Date(),
-      title: "Ads",
-      totalAmount: "-$350.00",
-      paymentMethod: "Bank Transfer",
-    },
-    {
-      id:1,
-      date: new Date(),
-      title: "Vinted",
-      totalAmount: "+ $450.00",
-      paymentMethod: "Credit Card",
-    },
+import { useTransaction } from "@/hooks/use-transactions"
 
-  ]
+
+
+
+ 
+
+
+  
+
   
   export function TransactionTable() {
+
+    const {transactions} = useTransaction();
+    console.log("transactions :" , transactions.map((transac) => (
+      transac.amount
+    )));
+    
+  
     return (
       
 
@@ -81,12 +66,12 @@ import FilterToggles from "./FilterToggles"
 
 
 
-                    {invoices.map((inv) => (
+                    {transactions.slice(0,4).map((inv) => (
                       <div className="grid h-full w-full border text-start p-2 rounded-sm bg-blue-900/20  hover:bg-blue-900/40  border-white/20 group ">
 
                           <div className="flex justify-between items-center">
                             <a href="" className="font-bold flex items-center gap-2 text-black">
-                              {inv.totalAmount.startsWith('+') ? (
+                              {inv.amount > 0 ? (
 
                                   <div className="bg-green-500/30  rounded-full p-2">
                                   <ArrowUp className="text-green-600"/>
@@ -110,10 +95,10 @@ import FilterToggles from "./FilterToggles"
                                   <Landmark className="text-blue-400/60 group-hover:text-blue-400"/>
                                 )
                                } 
-                              <p className="font-bold text-blue-500/60 group-hover:text-blue-400 text-xs md:text-sm items-center align-middle">{inv.title}</p>
+                              <p className="font-bold text-blue-500/60 group-hover:text-blue-400 text-xs md:text-sm items-center align-middle">{inv.reference}</p>
                               </div>
 
-                              <p className={`${inv.totalAmount.startsWith('-')  ? 'text-red-500/60 group-hover:text-red-500' : 'text-green-500/60 group-hover:text-green-500'} transition-all font-bold`}>{inv.totalAmount} €</p>                      
+                              <p className={`${inv.amount > 0 ? 'text-red-500/60 group-hover:text-red-500' : 'text-green-500/60 group-hover:text-green-500'} transition-all font-bold`}>{inv.amount} €</p>                      
                               
                           </div>
 
