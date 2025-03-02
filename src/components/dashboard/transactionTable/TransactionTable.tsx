@@ -19,7 +19,7 @@ import { useTransaction } from "@/hooks/use-transactions"
 
     const {transactions} = useTransaction();
     console.log("transactions :" , transactions.map((transac) => (
-      transac.paymentMethod
+      transac.type
     )));
     
   
@@ -71,7 +71,7 @@ import { useTransaction } from "@/hooks/use-transactions"
 
                           <div className="flex justify-between items-center">
                             <a href="" className="font-bold flex items-center gap-2 text-black">
-                              {inv.amount > 0 ? (
+                              {inv.type.startsWith("inc") ? (
 
                                   <div className="bg-green-500/30  rounded-full p-2">
                                   <ArrowUp className="text-green-600"/>

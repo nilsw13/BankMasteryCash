@@ -8,7 +8,8 @@ interface Transansaction {
     reference : string,
     amount : number,  
     paymentMethod : string,
-    date: string 
+    date: string ,
+    type: string
 
 }
 
