@@ -35,7 +35,7 @@ import { useTransaction } from "@/hooks/use-transactions"
          exit={{opacity : 0}}
          transition={{duration : 2, delay:1}}
       >
-      <Card className="bg-transparent border-white/20 md:min-h-[589.59px]">
+      <Card className="bg-transparent border-white/20 min-h-[589.59px]">
             <CardHeader className="group">
                 <CardTitle className="font bold text-xl text-blue-300/60 group-hover:text-blue-300 transition-all">
                     
