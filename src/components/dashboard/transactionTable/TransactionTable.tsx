@@ -17,10 +17,10 @@ import { useTransaction } from "@/hooks/use-transactions"
   
   export function TransactionTable() {
 
-    const {transactions} = useTransaction();
-    console.log("transactions :" , transactions.map((transac) => (
-      transac.type
-    )));
+    const {transactions, activeFilter, filterTransaction,resetFilter} = useTransaction();
+    
+
+  
     
   
     return (
@@ -43,7 +43,7 @@ import { useTransaction } from "@/hooks/use-transactions"
                     <h3>Recent transactions</h3>
                     <div className="">
 
-                    <FilterToggles/>
+                    <FilterToggles activeFilter={activeFilter} onFilterChange={filterTransaction} onFilterReset={resetFilter} />
 
                     </div>
                     </div>
@@ -98,7 +98,7 @@ import { useTransaction } from "@/hooks/use-transactions"
                               <p className="font-bold text-blue-500/60 group-hover:text-blue-400 text-xs md:text-sm items-center align-middle">{inv.reference}</p>
                               </div>
 
-                              <p className={`${inv.amount > 0 ? 'text-red-500/60 group-hover:text-red-500' : 'text-green-500/60 group-hover:text-green-500'} transition-all font-bold`}>{inv.amount} €</p>                      
+                              <p className={`${inv.type.startsWith("out")? 'text-red-500/60 group-hover:text-red-500' : 'text-green-500/60 group-hover:text-green-500'} transition-all font-bold`}>{inv.amount} €</p>                      
                               
                           </div>
 

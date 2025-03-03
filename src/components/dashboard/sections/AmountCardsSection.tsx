@@ -1,9 +1,29 @@
 import { AnimatePresence, motion } from "framer-motion"
 import DataCard from "../DataCard"
 import { ArrowDown, ArrowUp, VaultIcon, Wallet2 } from "lucide-react"
+import { useTransaction } from "@/hooks/use-transactions"
+import { useSavingAccount } from "@/hooks/use-savingAccount";
 
 
 function AmountCardsSection() {
+
+
+
+    const {transactions} = useTransaction();
+    const {savings} = useSavingAccount();
+
+        const totalIncomes = transactions
+            .filter(transac => transac.type === 'income')
+            .reduce((acc, transac) => acc + transac.amount, 0);
+
+        const totalOutcomes = transactions
+            .filter(transac => transac.type === 'outcome')
+            .reduce((acc, transac) => acc + transac.amount, 0);
+            
+        const totalAmountSavings = savings
+            .reduce((acc, sav)=> acc + sav.amount, 0)
+
+
 
     const cards = [
         {
@@ -20,7 +40,7 @@ function AmountCardsSection() {
         {
             id:2,
             title: 'Income',
-            amount: 3200, 
+            amount: totalIncomes, 
             stats: "this month",
             icon: <div className="bg-green-500/30  rounded-full p-2">
             <ArrowUp className="text-green-600"/>
@@ -30,7 +50,7 @@ function AmountCardsSection() {
         {
             id:3,
             title: "Expenses",
-            amount: 1892, 
+            amount: totalOutcomes, 
             stats: "this month",
             icon: <div className="bg-red-500/30  rounded-full p-2">
             <ArrowDown className="text-red-600"/>
@@ -40,7 +60,7 @@ function AmountCardsSection() {
         {
             id:4,
             title: "Savings", 
-            amount: 46003,
+            amount: totalAmountSavings,
             stats:" + 12, 3% from last month",  // need to change for dynamic data %
             icon: <div className="bg-blue-500/30  rounded-full p-2">
             <VaultIcon className="text-blue-600"/>
@@ -65,6 +85,10 @@ function AmountCardsSection() {
         
         return totalAmount - subAmount;
     }
+
+
+
+    
 
   return (
 
