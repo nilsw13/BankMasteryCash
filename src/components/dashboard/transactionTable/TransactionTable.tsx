@@ -35,7 +35,7 @@ import { useTransaction } from "@/hooks/use-transactions"
          exit={{opacity : 0}}
          transition={{duration : 2, delay:1}}
       >
-      <Card className="bg-transparent border-white/20 h-auto">
+      <Card className="bg-transparent border-white/20 md:min-h-[589.59px]">
             <CardHeader className="group">
                 <CardTitle className="font bold text-xl text-blue-300/60 group-hover:text-blue-300 transition-all">
                     
@@ -65,9 +65,14 @@ import { useTransaction } from "@/hooks/use-transactions"
 
 
 
-
+                    
                     {transactions.slice(0,4).map((inv) => (
-                      <div className="grid h-full w-full border text-start p-2 rounded-sm bg-blue-900/20  hover:bg-blue-900/40  border-white/20 group ">
+                      <motion.div
+                      initial={{opacity : 0}}
+                      animate={{opacity : 100}}
+                      exit={{opacity : 0}}
+                      transition={{duration : 0.3}}
+                      className="grid h-full w-full border text-start p-2 rounded-sm bg-blue-900/20  hover:bg-blue-900/40  border-white/20 group ">
 
                           <div className="flex justify-between items-center">
                             <a href="" className="font-bold flex items-center gap-2 text-black">
@@ -103,7 +108,7 @@ import { useTransaction } from "@/hooks/use-transactions"
                           </div>
 
 
-                      </div>
+                      </motion.div>
                     ))}
 
 
