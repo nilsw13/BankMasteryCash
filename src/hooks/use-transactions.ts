@@ -3,13 +3,13 @@ import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 
 
-interface Transansaction {
+export interface Transansaction {
     id : string, 
     customer: string, 
     reference : string,
     amount : number,  
     paymentMethod : string,
-    date: string ,
+    created_at: string ,
     type: string
 
 }
@@ -21,6 +21,7 @@ export const useTransaction = () => {
 
      const getTransactions = async (): Promise<Transansaction[]> => {
         const response = await api.get<Transansaction[]>("v1/transactions")
+        console.log(response.data)
         return  response.data;
     }
 

@@ -9,35 +9,37 @@ function App() {
 
 
   return (
-    <>    
+  <>    
+
+  <div className=' overflow-hidden'>
 
     <AnimatePresence>
 
-    <motion.header
-            initial={{opacity : 0}}
-            animate={{opacity : 100}}
-            exit={{opacity : 0}}
-            transition={{duration : 2}}
-          className=" w-screen bg-slate-700/20 mb-20 pt-6   ">
+            <motion.header
+              initial={{opacity : 0}}
+              animate={{opacity : 100}}
+              exit={{opacity : 0}}
+              transition={{duration : 2}}
+              className=" w-screen bg-slate-700/20 md:mb-20 pt-6">
 
-             <HeaderDashboard/>
+                    <HeaderDashboard/>
 
-          </motion.header>
+            </motion.header>
 
-       <motion.div 
-       
-       id='app ' className='overflow-x-hidden p-4 h-screen' >
+            <motion.div id='app ' className='overflow-x-hidden md:p-4 h-screen' >
 
-          <div className='scale-90' >
+                <div className='scale-90' >
+                <DashBoard/>
+                </div>
+
+            </motion.div>
 
 
-          <DashBoard/>
-          
-          </div>
-      </motion.div>
-      <Footer/>
-      </AnimatePresence>
-    </>
+            <Footer/>
+            
+    </AnimatePresence>
+    </div>
+  </>
   )
 }
 

@@ -5,6 +5,7 @@ import { AnimatePresence , motion} from "framer-motion"
 import {  ArrowDown, ArrowUp,CreditCard, Landmark, } from "lucide-react"
 import FilterToggles from "./FilterToggles"
 import { useTransaction } from "@/hooks/use-transactions"
+import AllTransactionsModale from "./AllTransactionsModale"
 
 
 
@@ -35,7 +36,7 @@ import { useTransaction } from "@/hooks/use-transactions"
          exit={{opacity : 0}}
          transition={{duration : 2, delay:1}}
       >
-      <Card className="bg-transparent border-white/20 min-h-[589.59px]">
+      <Card className="bg-transparent border-white/20 min-h-[589.59px] flex flex-col">
             <CardHeader className="group">
                 <CardTitle className="font bold text-xl text-blue-300/60 group-hover:text-blue-300 transition-all">
                     
@@ -54,7 +55,7 @@ import { useTransaction } from "@/hooks/use-transactions"
                     
                     </CardTitle>
             </CardHeader>
-            <CardContent className="flex flex-col">
+            <CardContent className="flex flex-col h-full">
 
                 
 
@@ -103,7 +104,7 @@ import { useTransaction } from "@/hooks/use-transactions"
                               <p className="font-bold text-blue-500/60 group-hover:text-blue-400 text-xs md:text-sm items-center align-middle">{inv.reference}</p>
                               </div>
 
-                              <p className={`${inv.type.startsWith("out")? 'text-red-500/60 group-hover:text-red-500' : 'text-green-500/60 group-hover:text-green-500'} transition-all font-bold`}>{inv.amount} €</p>                      
+                              <p className={`${inv.type.startsWith("out")? 'text-red-500/60 group-hover:text-red-500' : 'text-green-500/60 group-hover:text-green-500'} transition-all font-bold`}>{inv.amount.toFixed(2)} €</p>                      
                               
                           </div>
 
@@ -122,11 +123,9 @@ import { useTransaction } from "@/hooks/use-transactions"
             
                         
                 </div>
-        <a href="" className="mt-16">
-          <Button className="border mx-auto p-6  w-full bg-blue-900/20  hover:bg-blue-900/40 transition-all  border-white/20 text-blue-600 hover:text-blue-400">
-            See more
-          </Button>
-        </a>
+
+                <div className="flex-grow pt-12"></div>
+             <AllTransactionsModale/>
         </CardContent>
         </Card>
         </motion.div>

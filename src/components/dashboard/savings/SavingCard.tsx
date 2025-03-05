@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { useSavingAccount } from "@/hooks/use-savingAccount"
 import { AnimatePresence, motion } from "framer-motion"
 import { Building, ComputerIcon, PiggyBank, PlusIcon, TreePine, VaultIcon } from "lucide-react"
+import AddSavinsModale from "./AddSavinsModale";
 
 
 function SavingCard() {
@@ -30,9 +31,7 @@ function SavingCard() {
                                 
                             <div className="flex justify-between"> 
                                 <h3>Savings</h3>
-                                <a href="">
-                                    <PlusIcon className="w-8 h-8 border-2 rounded-sm p-1 bg-blue-900/20  hover:bg-blue-900/20  border-white/20 text-blue-600"/>
-                                </a>
+                                     <AddSavinsModale/>
                                 </div>
 
                                 
@@ -48,7 +47,7 @@ function SavingCard() {
                                     <div className="border-transparent  pl-2  pt-2 pb-1 "><VaultIcon className="border-2  rounded-full h-12 w-12 p-2 bg-blue-900/20  hover:bg-blue-900/20  border-white/20 text-blue-600 group-hover:text-blue-300"/></div>
                                     {acc.name}
                                 </a>
-                                <p className="font-bold pr-2 text-md whitespace-nowrap text-green-500/60 group-hover:text-green-500">{acc.amount} $</p>
+                                <p className="font-bold pr-2 text-md whitespace-nowrap text-green-500/60 group-hover:text-green-500">{acc.amount.toFixed(2)} $</p>
 
                                 </div>
                             

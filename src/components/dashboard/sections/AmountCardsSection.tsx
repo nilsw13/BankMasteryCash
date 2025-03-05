@@ -49,7 +49,7 @@ function AmountCardsSection() {
 
         {
             id:3,
-            title: "Expenses",
+            title: "Outcomes",
             amount: totalOutcomes, 
             stats: "this month",
             icon: <div className="bg-red-500/30  rounded-full p-2">
@@ -73,7 +73,7 @@ function AmountCardsSection() {
         let totalAmount  = 0
         let subAmount = 0
         for (let i = 0; i < cards.length; i ++){
-            if (cards[i].title === "Expenses"){
+            if (cards[i].title === "Outcomes"){
                 subAmount = cards[i].amount;
                 totalAmount -= subAmount
             }

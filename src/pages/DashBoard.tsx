@@ -2,6 +2,8 @@ import ChartSection from "@/components/dashboard/sections/ChartSection"
 
 
 import AmountCardsSection from "@/components/dashboard/sections/AmountCardsSection"
+import AddTransactionModal from "@/components/dashboard/transactionTable/AddTransactionModal";
+import IncomeLineChart from "@/components/dashboard/charts/LineChart";
 
 
 
@@ -17,7 +19,7 @@ function DashBoard() {
 
     return (
      
-      <div className="  p-4 md:p-8">   // Conteneur principal - définit la structure globale
+      <div className=" overflow-hidden  p-4 md:p-8">   // Conteneur principal - définit la structure globale
 
 
 
@@ -40,9 +42,9 @@ function DashBoard() {
         <section className="mb-8 ">  {/* Section Graphiques */}
           <ChartSection/>
         </section>
+        
 
-
-
+      
 
 
 

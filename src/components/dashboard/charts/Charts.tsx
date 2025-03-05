@@ -1,9 +1,11 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { AnimatePresence, motion } from 'framer-motion'
 import ChartContainerComponent from './ChartContainer'
+import LineChart from './LineChart'
 
 function Charts() {
 
+  
 
   
 
@@ -29,16 +31,15 @@ function Charts() {
               <div className='mt-8 flex flex-col gap-10'>
 
 
-                    <div className='flex flex-col md:flex-row'>
+                    <div className=' flex flex-col md:flex-row '>
 
-                     <ChartContainerComponent/>
-
-                     <ChartContainerComponent/>
+                   
+                    <LineChart/>
 
                       </div>
 
-
-                      <ChartContainerComponent/>
+                    
+                     
 
               </div>
 

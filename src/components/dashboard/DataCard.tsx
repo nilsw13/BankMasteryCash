@@ -34,11 +34,11 @@ function DataCard({ title, amount, stats, totalAmount, icon }: DataCardProps) {
 
                   {totalAmount && title ==="Total balance" ? (
 
-                  <p className={`${(totalAmount ?? 0) > 0? 'text-green-500 text-2xl font-bold' : 'text-red-500  text-2xl font-bold'} font-bold`}>{totalAmount} €</p>
+                  <p className={`${(totalAmount ?? 0) > 0? 'text-green-500 text-2xl font-bold' : 'text-red-500  text-2xl font-bold'} font-bold`}>{totalAmount.toFixed(2)} €</p>
 
                   ) : (
 
-                    <p className={`${(amount ?? 0) > 0 && title !== "Expenses" ? 'text-green-500  text-2xl font-bold' : 'text-red-500  text-2xl font-bold'} font-bold`}>{amount} €</p>
+                    <p className={`${(amount ?? 0) > 0 && title !== "Outcomes" ? 'text-green-500  text-2xl font-bold' : 'text-red-500  text-2xl font-bold'} font-bold`}>{amount?.toFixed(2)} €</p>
                   )
                   
                   }
