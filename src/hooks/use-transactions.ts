@@ -1,5 +1,6 @@
-import api from "@/api/axios"
-import { useQuery } from "@tanstack/react-query";
+import api from "@/api/axios";
+
+import { useQuery, useMutation, QueryClient, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
 
 
@@ -14,9 +15,20 @@ export interface Transansaction {
 
 }
 
+export interface TransactionPostDto {
+  amount: number,
+  reference: string, 
+  customer : string, 
+  paymentMethod: string, 
+  type: string
+
+}
+
 export const useTransaction = () => {
 
     const [activeFilter, setActiveFilter] = useState("");
+
+    const queryClient = useQueryClient()
 
 
      const getTransactions = async (): Promise<Transansaction[]> => {
@@ -25,6 +37,25 @@ export const useTransaction = () => {
         return  response.data;
     }
 
+    const addTransaction = async (transactionDto : TransactionPostDto): Promise<Transansaction>  => {
+        const response = await api.post("v1/add-transaction", transactionDto)
+        return response.data;
+
+    }
+
+
+    const mutation = useMutation({
+      mutationFn: addTransaction,
+      onSuccess : () => {
+        queryClient.invalidateQueries({
+          queryKey: ["transactions"]
+        })
+      }
+    })
+
+    const addNewTransaction = (transactionDto : TransactionPostDto) => {
+        return mutation.mutate(transactionDto);
+    }
 
     
     
@@ -45,6 +76,9 @@ export const useTransaction = () => {
         setActiveFilter(filterType)
       }
 
+
+      
+
       const resetFilter = () => {
         setActiveFilter("");
       }
@@ -58,7 +92,10 @@ export const useTransaction = () => {
         activeFilter,
         refetch,
         filterTransaction,
-        resetFilter
+        resetFilter,
+        addNewTransaction,
+        isAdding: mutation.isPending,
+        addingError: mutation.isError
       }
 
 }
