@@ -1,7 +1,6 @@
 import Charts from "./Charts";
 import SavingCard from "../savings/SavingCard";
 import { TransactionTable } from "../transactionTable/TransactionTable";
-import { useEffect } from "react";
 
 function ChartSection() {
   return (

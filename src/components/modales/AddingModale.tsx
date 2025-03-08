@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { SavingAccountDto, useSavingAccount } from "@/hooks/use-savingAccount";
 import { TransactionPostDto, useTransaction } from "@/hooks/use-transactions";
-import { PlusIcon, VaultIcon, XIcon } from "lucide-react";
+import { PlusIcon, XIcon } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 

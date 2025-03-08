@@ -1,6 +1,5 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
-import { PlusIcon } from "lucide-react";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+
 import AddingModale from "../../modales/AddingModale";
 
 function HeaderDashboard() {

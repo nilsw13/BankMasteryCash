@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ArrowDown, ArrowUp, CreditCard, Landmark } from "lucide-react";
 import FilterToggles from "./FilterToggles";
 import { useTransaction } from "@/hooks/use-transactions";
-import AllTransactionsModale from "./AllTransactionsModale";
+import AllElementsModale from "@/components/modales/AllElementsModale";
 
 export function TransactionTable() {
   const { transactions, activeFilter, filterTransaction, resetFilter } =
@@ -89,7 +89,7 @@ export function TransactionTable() {
             </div>
 
             <div className="flex-grow pt-14"></div>
-            <AllTransactionsModale />
+            <AllElementsModale variant="transaction" />
           </CardContent>
         </Card>
       </motion.div>
