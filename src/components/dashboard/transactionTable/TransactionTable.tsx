@@ -19,6 +19,8 @@ import AllTransactionsModale from "./AllTransactionsModale"
   export function TransactionTable() {
 
     const {transactions, activeFilter, filterTransaction,resetFilter} = useTransaction();
+
+    const reverseTransactions = [...transactions].reverse();
     
 
   
@@ -67,7 +69,7 @@ import AllTransactionsModale from "./AllTransactionsModale"
 
 
                     
-                    {transactions.slice(0,4).map((inv) => (
+                    {reverseTransactions.slice(0,4).map((inv) => (
                       <motion.div
                       initial={{opacity : 0}}
                       animate={{opacity : 100}}
@@ -124,7 +126,7 @@ import AllTransactionsModale from "./AllTransactionsModale"
                         
                 </div>
 
-                <div className="flex-grow pt-12"></div>
+                <div className="flex-grow pt-14"></div>
              <AllTransactionsModale/>
         </CardContent>
         </Card>

@@ -1,7 +1,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { PlusIcon } from "lucide-react"
-import AddTransactionModal from "../transactionTable/AddTransactionModal"
+import AddingModale from "../../modales/AddingModale"
 
 
 function HeaderDashboard() {
@@ -16,8 +16,7 @@ function HeaderDashboard() {
               </Avatar>
               <h1 className="text-blue-300/60 group-hover:text-blue-300 md:text-3xl font-bold text-xs transition-all">Dashboard</h1>
             </div>
-
-         <AddTransactionModal/>
+            <AddingModale variant="transaction"/>
           </div>
   )
 }
