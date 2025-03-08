@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { SavingAccountDto, useSavingAccount } from "@/hooks/use-savingAccount";
 import { TransactionPostDto, useTransaction } from "@/hooks/use-transactions";
-import { PlusIcon, XIcon } from "lucide-react";
+import { LoaderCircle, PlusIcon, XIcon } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { toast } from "sonner";
@@ -11,9 +11,10 @@ interface AddingModaleProps {
 }
 
 function AddingModale({ variant }: AddingModaleProps) {
-  const { addNewTransaction, addingError, isAdding } = useTransaction();
+  const { addNewTransaction, addingError, isAdding  } = useTransaction();
   const { newSavincAccount, savingAddingError, isSavingAdding } =
     useSavingAccount();
+
 
   const [shake, setShake] = useState(false);
 
@@ -53,7 +54,8 @@ function AddingModale({ variant }: AddingModaleProps) {
   };
 
   const resetFormState = () => {
-    window.location.href = "#";
+   
+     
     if (variant === "transaction") {
       setTransactionFormData({
         amount: 0,
@@ -68,6 +70,10 @@ function AddingModale({ variant }: AddingModaleProps) {
       name: "",
       rate: 0,
     });
+
+    setTimeout(()=> window.location.href = '#', 2000)
+    
+
   };
 
   const renderTransacFields = () => {
@@ -143,6 +149,7 @@ function AddingModale({ variant }: AddingModaleProps) {
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    
     if (variant === "transaction") {
       e.preventDefault();
       const transactionHasErrors =
@@ -151,11 +158,17 @@ function AddingModale({ variant }: AddingModaleProps) {
         setShake(true);
         toast.error("Error while adding transaction")
         setTimeout(() => setShake(false), 500);
-       
+        
         return;
       }
       console.log("submitted transaction", transactionFormData);
+
+      
       addNewTransaction(transactionFormData);
+
+      
+      
+
     } else {
       e.preventDefault();
       const savingHasErrors =
@@ -171,10 +184,15 @@ function AddingModale({ variant }: AddingModaleProps) {
 
       console.log("submitted saving account", savingFormData);
       newSavincAccount(savingFormData);
+      
     }
 
-    resetFormState();
+      resetFormState()
+
+    
   };
+
+  
 
   return (
     <div>
@@ -245,8 +263,11 @@ function AddingModale({ variant }: AddingModaleProps) {
                     disabled={isAdding || isSavingAdding}
                     type="submit"
                   >
-                    Submit
+                    {isAdding || isSavingAdding  ? <LoaderCircle className="animate-spin transition-all"/> : "Submit"}
+
                   </Button>
+
+                  
                 </a>
               </div>
             </form>

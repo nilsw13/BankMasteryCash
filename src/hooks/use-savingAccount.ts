@@ -35,6 +35,8 @@ export const useSavingAccount = () => {
     savingDto: SavingAccountDto,
   ): Promise<SavingAccountDto> => {
     try {
+      await new Promise(resolve => setTimeout(resolve, 2000))
+
       const response = await api.post("/v1/add-saving", savingDto);
       toast.success("Saving account succesfully added")
       return response.data;

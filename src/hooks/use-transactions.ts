@@ -1,6 +1,7 @@
 import api from "@/api/axios";
 
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { resolve } from "path";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -44,6 +45,10 @@ export const useTransaction = () => {
     transactionDto: TransactionPostDto,
   ): Promise<Transansaction> => {
     try {
+
+      await new Promise(resolve => setTimeout(resolve, 2000))
+
+
       const response = await api.post("v1/add-transaction", transactionDto);
       toast.success("Transaction successfully added")
       return response.data;

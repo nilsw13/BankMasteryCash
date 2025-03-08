@@ -2,6 +2,7 @@ import { useSavingAccount } from "@/hooks/use-savingAccount";
 import { useTransaction } from "@/hooks/use-transactions";
 import { Button } from "../ui/button";
 import { File } from "lucide-react";
+import { toast } from "sonner";
 
 interface AllElementsModaleProps {
   variant: "transaction" | "saving account";
@@ -111,13 +112,16 @@ function AllElementsModale({ variant }: AllElementsModaleProps) {
 
             <div className="mt-4 w-full grid grid-cols-2 gap-2">
               <a href="#" className="col-span-1">
-                <Button className="w-[100%] bg-green-200 text-slate-800 hover:bg-green-300 font-bold">
+                <Button 
+                
+                onMouseOver={()=>toast.warning("This options is not available for the moment.. sorry ")}
+                className="w-[100%] bg-green-200 text-slate-800 hover:bg-green-200 font-bold">
                   Export in csv <File />
                 </Button>
               </a>
 
               <a href="#" className="col-span-1">
-                <Button className="w-[100%] bg-red-300 text-slate-800 hover:bg-rose-400 font-bold">
+                <Button className="w-[100%] bg-red-300 text-slate-800 hover:bg-rose-400 cursor-pointer font-bold">
                   Close
                 </Button>
               </a>
