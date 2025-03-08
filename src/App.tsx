@@ -3,10 +3,16 @@ import HeaderDashboard from "./components/dashboard/headerFooter/HeaderDashboard
 import Footer from "./components/dashboard/headerFooter/Footer";
 import DashBoard from "./pages/DashBoard";
 import { motion, AnimatePresence } from "framer-motion";
+import { Toaster, toast } from 'sonner'
 
 function App() {
   return (
     <>
+          <div>
+          <Toaster richColors/>
+          
+        </div>
+
       <div className=" overflow-hidden">
         <AnimatePresence>
           <motion.header

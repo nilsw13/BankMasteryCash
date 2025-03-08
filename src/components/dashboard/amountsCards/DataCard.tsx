@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "../../ui/card";
 import { AnimatePresence, motion } from "framer-motion";
 
 interface DataCardProps {
@@ -39,7 +39,7 @@ function DataCard({ title, amount, stats, totalAmount, icon }: DataCardProps) {
               </p>
             )}
 
-            {/** <p className={`${(amount ?? 0) > 0 && title !== "Expenses" ? 'text-green-500' : 'text-red-500'} font-bold`}>{amount} €</p> */}
+           
 
             <p className="mt-2 text-gray-500">{stats}</p>
           </CardContent>

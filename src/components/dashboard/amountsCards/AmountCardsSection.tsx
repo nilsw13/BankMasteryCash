@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import DataCard from "../DataCard";
+import DataCard from "./DataCard";
 import { ArrowDown, ArrowUp, VaultIcon, Wallet2 } from "lucide-react";
 import { useTransaction } from "@/hooks/use-transactions";
 import { useSavingAccount } from "@/hooks/use-savingAccount";

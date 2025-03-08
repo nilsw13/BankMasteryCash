@@ -4,6 +4,7 @@ import { TransactionPostDto, useTransaction } from "@/hooks/use-transactions";
 import { PlusIcon, XIcon } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { toast } from "sonner";
 
 interface AddingModaleProps {
   variant: "transaction" | "saving account";
@@ -148,7 +149,9 @@ function AddingModale({ variant }: AddingModaleProps) {
         transactionFormData.amount < 0 || !transactionFormData.reference.trim();
       if (transactionHasErrors) {
         setShake(true);
+        toast.error("Error while adding transaction")
         setTimeout(() => setShake(false), 500);
+       
         return;
       }
       console.log("submitted transaction", transactionFormData);
@@ -161,6 +164,7 @@ function AddingModale({ variant }: AddingModaleProps) {
         !savingFormData.name.trim();
       if (savingHasErrors) {
         setShake(true);
+        toast.error("Error while adding saving account")
         setTimeout(() => setShake(false), 500);
         return;
       }
