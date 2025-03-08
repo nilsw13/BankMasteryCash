@@ -1,46 +1,35 @@
-
-import './App.css'
-import HeaderDashboard from './components/dashboard/header/HeaderDashboard'
-import Footer from './components/footer/Footer'
-import DashBoard from './pages/DashBoard'
-import {motion, AnimatePresence} from 'framer-motion'
+import "./App.css";
+import HeaderDashboard from "./components/dashboard/header/HeaderDashboard";
+import Footer from "./components/footer/Footer";
+import DashBoard from "./pages/DashBoard";
+import { motion, AnimatePresence } from "framer-motion";
 
 function App() {
-
-
   return (
-  <>    
+    <>
+      <div className=" overflow-hidden">
+        <AnimatePresence>
+          <motion.header
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 100 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 2 }}
+            className=" w-screen bg-slate-700/20 md:mb-20 pt-6"
+          >
+            <HeaderDashboard />
+          </motion.header>
 
-  <div className=' overflow-hidden'>
+          <motion.div id="app " className="overflow-x-hidden md:p-4 h-screen">
+            <div className="scale-90">
+              <DashBoard />
+            </div>
+          </motion.div>
 
-    <AnimatePresence>
-
-            <motion.header
-              initial={{opacity : 0}}
-              animate={{opacity : 100}}
-              exit={{opacity : 0}}
-              transition={{duration : 2}}
-              className=" w-screen bg-slate-700/20 md:mb-20 pt-6">
-
-                    <HeaderDashboard/>
-
-            </motion.header>
-
-            <motion.div id='app ' className='overflow-x-hidden md:p-4 h-screen' >
-
-                <div className='scale-90' >
-                <DashBoard/>
-                </div>
-
-            </motion.div>
-
-
-            <Footer/>
-            
-    </AnimatePresence>
-    </div>
-  </>
-  )
+          <Footer />
+        </AnimatePresence>
+      </div>
+    </>
+  );
 }
 
-export default App
+export default App;
