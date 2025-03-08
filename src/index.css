@@ -107,3 +107,22 @@
     font-family: "Space Grotesk", sans-serif;
   }
 }
+
+
+@keyframes fillBorder {
+  0% { border-color: transparent; }
+  100% { border-color: #BBF7D0; }
+}
+
+.loading-border {
+  border: 2px solid transparent;
+  animation: fillBorder 0.9s ease-in-out forwards;
+}
+
+.error-border {
+  border: 2px solid #FCA5A5;
+}
+
+.no-border {
+  border: none;
+}

@@ -17,6 +17,7 @@ function AddingModale({ variant }: AddingModaleProps) {
 
 
   const [shake, setShake] = useState(false);
+  const [doBorder, setDoBorder] = useState(false)
 
   const [transactionFormData, setTransactionFormData] =
     useState<TransactionPostDto>({
@@ -53,6 +54,11 @@ function AddingModale({ variant }: AddingModaleProps) {
     }
   };
 
+  const resetBorderAndRedirect = ()=> {
+    setDoBorder(false)
+    window.location.href = "#";
+  }
+
   const resetFormState = () => {
    
      
@@ -71,7 +77,8 @@ function AddingModale({ variant }: AddingModaleProps) {
       rate: 0,
     });
 
-    setTimeout(()=> window.location.href = '#', 2000)
+    setTimeout(()=> setDoBorder(true), 900)
+    setTimeout(()=> resetBorderAndRedirect(), 2000)
     
 
   };
@@ -221,8 +228,10 @@ function AddingModale({ variant }: AddingModaleProps) {
               : { x: 0 }
           }
           transition={{ duration: 0.5 }}
-          style={shake ? { border: "2px solid #FCA5A5" } : {}}
-          className={`w-auto pl-10 pr-10  bg-slate-800/70 h-auto m-4 p-4 rounded-lg md:w-fit  `}
+          style={shake ? { border: "2px solid #FCA5A5" } : {}
+                  
+        }
+          className={`w-auto pl-10 pr-10  bg-slate-800/70 h-auto m-4 p-4 rounded-lg md:w-fit ${doBorder ? "loading-border" : "no-border"} `}
         >
           <div className="flex flex-col items-center space-y-5 w-full ">
             <a href="#" className="relative md:left-[48%]">
