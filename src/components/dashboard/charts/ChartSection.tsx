@@ -1,4 +1,4 @@
-import Charts from "../charts/Charts";
+import Charts from "./Charts";
 import SavingCard from "../savings/SavingCard";
 import { TransactionTable } from "../transactionTable/TransactionTable";
 import { useEffect } from "react";

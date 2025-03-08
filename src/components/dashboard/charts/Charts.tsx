@@ -6,7 +6,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { AnimatePresence, motion } from "framer-motion";
-import ChartContainerComponent from "./ChartContainer";
+
 import LineChart from "./LineChart";
 
 function Charts() {

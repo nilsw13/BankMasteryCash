@@ -1,8 +1,6 @@
-import ChartSection from "@/components/dashboard/sections/ChartSection";
+import ChartSection from "@/components/dashboard/charts/ChartSection";
 
-import AmountCardsSection from "@/components/dashboard/sections/AmountCardsSection";
-import AddTransactionModal from "@/components/dashboard/transactionTable/AddTransactionModal";
-import IncomeLineChart from "@/components/dashboard/charts/LineChart";
+import AmountCardsSection from "@/components/dashboard/amountsCards/AmountCardsSection";
 
 function DashBoard() {
   return (

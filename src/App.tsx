@@ -1,6 +1,6 @@
 import "./App.css";
-import HeaderDashboard from "./components/dashboard/header/HeaderDashboard";
-import Footer from "./components/footer/Footer";
+import HeaderDashboard from "./components/dashboard/headerFooter/HeaderDashboard";
+import Footer from "./components/dashboard/headerFooter/Footer";
 import DashBoard from "./pages/DashBoard";
 import { motion, AnimatePresence } from "framer-motion";
 

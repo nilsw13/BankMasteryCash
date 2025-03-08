@@ -3,7 +3,7 @@ import { useSavingAccount } from "@/hooks/use-savingAccount";
 import { AnimatePresence, motion } from "framer-motion";
 import { VaultIcon } from "lucide-react";
 
-import AllSavingModale from "../sections/AllSavingModale";
+import AllSavingModale from "./AllSavingModale";
 import AddingModale from "../../modales/AddingModale";
 
 function SavingCard() {
