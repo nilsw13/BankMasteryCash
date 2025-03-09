@@ -16,8 +16,8 @@ const AddingSavingSchema = z.object({
 
     amount: z
         .number({invalid_type_error, required_error})
-        .min(1, {message : required_error})
-        .safe(),
+        .min(1, {message : invalid_type_error}),
+        
 
     name: z
         .string({invalid_type_error, required_error})
@@ -30,12 +30,16 @@ const AddingSavingSchema = z.object({
         .refine(val => !xssRegex.test(val), {
             message: xss_error
         }),
+
+        rate: z
+        .number({invalid_type_error, required_error})
+        .refine(val => val >= 0.1, { 
+            
+          message: "Rate must be at least 0.1%" 
+        })
+      
         
 
-    rate: z
-    .number({invalid_type_error, required_error})
-        .min(0.1, { message: required_error })
-         .max(100, { message: lenght_out_error })
 })
 
 export default AddingSavingSchema;
