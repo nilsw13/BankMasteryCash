@@ -5,6 +5,9 @@ import { LoaderCircle, PlusIcon, XIcon } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { toast } from "sonner";
+import AddingSavingSchema from "@/schemas/AddingSavingSchema";
+import AddingTransactionSchema from "@/schemas/AddingTransactionSchema";
+import { z } from "zod";
 
 interface AddingModaleProps {
   variant: "transaction" | "saving account";
@@ -159,38 +162,49 @@ function AddingModale({ variant }: AddingModaleProps) {
     
     if (variant === "transaction") {
       e.preventDefault();
-      const transactionHasErrors =
-        transactionFormData.amount < 0 || !transactionFormData.reference.trim();
-      if (transactionHasErrors) {
-        setShake(true);
-        toast.error("Error while adding transaction")
+      
+      
+      try {
+        console.log("submitted transaction", transactionFormData);
+
+        const requestBody = AddingTransactionSchema.parse(transactionFormData);
+        console.log("request body : " , requestBody);
+        addNewTransaction(requestBody);
+      }  catch (error) {
+        if (error instanceof z.ZodError){
+          setShake(true);
+        toast.error(error.errors[0].message||"Error while adding transaction")
         setTimeout(() => setShake(false), 500);
-        
         return;
-      }
-      console.log("submitted transaction", transactionFormData);
+      } 
+
+    }
+     
+     
 
       
-      addNewTransaction(transactionFormData);
 
+    
       
       
 
     } else {
       e.preventDefault();
-      const savingHasErrors =
-        savingFormData.amount < 0 ||
-        savingFormData.rate < 0 ||
-        !savingFormData.name.trim();
-      if (savingHasErrors) {
-        setShake(true);
-        toast.error("Error while adding saving account")
-        setTimeout(() => setShake(false), 500);
-        return;
+      
+      try {
+        const requestBody = AddingSavingSchema.parse(savingFormData);
+        console.log("request body : " , requestBody);
+        newSavincAccount(requestBody);
+      } catch (error) {
+        if (error instanceof z.ZodError) {
+          setShake(true);
+          toast.error(error.errors[0].message || "Error while adding saving account");
+          setTimeout(() => setShake(false), 500);
+          return;
+        }
       }
 
-      console.log("submitted saving account", savingFormData);
-      newSavincAccount(savingFormData);
+     
       
     }
 
