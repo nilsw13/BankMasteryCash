@@ -14,10 +14,9 @@ function SavingCard() {
   return (
     <AnimatePresence>
       <motion.div
-        initial={{ opacity: 0 , y:20}}
-        animate={{ opacity: 1, y:0 }}
-        
-        transition={{  delay: 0.7 }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.7 }}
       >
         <Card className="bg-transparent border-white/20 min-h-[499px] flex flex-col">
           <CardHeader className="group">
@@ -41,22 +40,23 @@ function SavingCard() {
                       href=""
                       className="font-bold flex items-center gap-2 text-blue-400/60 group-hover:text-blue-300 transition-all"
                     >
-                      <div className="border-transparent   ">
-                        <VaultIcon className="border-2  rounded-full h-6 w-6 p-1 bg-blue-900/20  hover:bg-blue-900/20  border-white/20 text-blue-600 group-hover:text-blue-300" />
+                      <div className="border-transparent pl-2 p-1 ">
+                        <VaultIcon className="border-2  rounded-full h-6 w-6 p-1  bg-blue-900/20  hover:bg-blue-900/20  border-white/20 text-blue-600 group-hover:text-blue-300" />
                       </div>
-                      {acc.name}
                     </a>
+                    <p className="text-blue-400/60 text-xs font-bold ">
+                      {" "}
+                      {acc.name}
+                    </p>
                     <p className="font-bold pr-2 text-xs whitespace-nowrap text-green-500/60 group-hover:text-green-500">
                       {acc.amount.toFixed(2)} $
                     </p>
                   </div>
-
-                  <p className="text-blue-400/60 ml-16 text-xs">{acc.rate} %</p>
                 </div>
               ))}
             </div>
 
-            <div className="flex-grow "></div>
+            <div className="flex-grow mt-10 "></div>
             <AllElementsModale variant="saving account" />
           </CardContent>
         </Card>

@@ -19,7 +19,6 @@ export function TransactionTable() {
         className="h-full"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        
         transition={{ delay: 0.6 }}
       >
         <Card className="bg-transparent border-white/20 min-h-[499px] flex flex-col">
@@ -67,7 +66,7 @@ export function TransactionTable() {
                       {inv.paymentMethod.startsWith("cr") ? (
                         <CreditCard className="text-blue-400/60 group-hover:text-blue-400 w-4 h-4" />
                       ) : (
-                        <Landmark className="text-blue-400/60 group-hover:text-blue-400 w-4 h-4"  />
+                        <Landmark className="text-blue-400/60 group-hover:text-blue-400 w-4 h-4" />
                       )}
                       <p className="font-bold text-blue-500/60 group-hover:text-blue-400 text-xs md:text-sm items-center align-middle">
                         {inv.reference}

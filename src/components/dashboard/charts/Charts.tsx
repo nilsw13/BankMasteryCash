@@ -15,7 +15,6 @@ function Charts() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        
         transition={{ delay: 0.5 }}
       >
         <Card className="w-full bg-transparent border-white/20 border md:h-[500px] group ">

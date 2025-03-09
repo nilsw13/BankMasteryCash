@@ -85,19 +85,19 @@ function AddingModale({ variant }: AddingModaleProps) {
   const renderTransacFields = () => {
     return (
       <div className="grid text-white gap-4 w-full">
-        <label className="font-bold text-secondary text-xl">Reference</label>
+        <label className="font-bold text-secondary text-xs">Reference</label>
         <input
           onChange={handleChange}
           name="reference"
           value={transactionFormData.reference}
           type="text"
-          className="rounded-lg p-2 bg-slate-800 text-blue-300 font-bold"
+          className="rounded-lg text-xs p-2 bg-slate-800 text-blue-300 font-bold"
           placeholder="Netflix, Mcdonalds.."
         />
 
         <label
           htmlFor="paymentMethod"
-          className="font-bold text-secondary text-xl"
+          className="font-bold text-secondary text-xs"
         >
           Paiment method
         </label>
@@ -107,13 +107,13 @@ function AddingModale({ variant }: AddingModaleProps) {
           value={transactionFormData.paymentMethod}
           name="paymentMethod"
           id="paymentMethod"
-          className="bg-slate-800 text-blue-300 font-bold rounded-lg p-2"
+          className="bg-slate-800 text-blue-300 font-bold rounded-lg text-xs p-2"
         >
           <option value="bank_transfert">Bank transfert</option>
           <option value="credit_card">Credit card</option>
         </select>
 
-        <label className="font-bold text-secondary text-xl">
+        <label className="font-bold text-secondary text-xs">
           Income ? Outcome ?
         </label>
         <select
@@ -122,7 +122,7 @@ function AddingModale({ variant }: AddingModaleProps) {
           value={transactionFormData.type}
           name="type"
           id="type"
-          className="bg-slate-800 text-blue-300 font-bold rounded-lg p-2"
+          className="bg-slate-800 text-blue-300 font-bold rounded-lg text-xs p-2"
         >
           <option value="income">Income</option>
           <option value="outcome">Outcome</option>
@@ -134,24 +134,24 @@ function AddingModale({ variant }: AddingModaleProps) {
   const renderSavingFields = () => {
     return (
       <div className="grid text-white gap-4 w-full">
-        <label className="font-bold text-secondary text-xl">Name</label>
+        <label className="font-bold text-secondary text-xs">Name</label>
         <input
           onChange={handleChange}
           name="name"
           value={savingFormData.name}
           type="text"
-          className="rounded-lg p-2 bg-slate-800 text-blue-300 font-bold"
+          className="rounded-lg p-2 text-xs bg-slate-800 text-blue-300 font-bold"
           placeholder="Real estate, Techs assets.."
         />
 
-        <label className="font-bold text-secondary text-xl">Rate</label>
+        <label className="font-bold text-secondary text-xs">Rate</label>
         <input
           onChange={handleChange}
           name="rate"
           value={savingFormData.rate}
           type="number"
           step={0.1}
-          className="rounded-lg p-2 bg-slate-800 text-blue-300 font-bold"
+          className="rounded-lg p-2 bg-slate-800 text-xs text-blue-300 font-bold"
         />
       </div>
     );
@@ -233,19 +233,20 @@ function AddingModale({ variant }: AddingModaleProps) {
           style={shake ? { border: "2px solid #FCA5A5" } : {}}
           className={`w-auto pl-10 pr-10  bg-slate-800/70 h-auto m-4 p-4 rounded-lg md:w-fit ${doBorder ? "loading-border" : "no-border"} `}
         >
-          <div className="flex flex-col items-center space-y-5 w-full ">
-            <a href="#" className="relative md:left-[48%]">
-              <Button className=" bg-red-300 text-slate-800 hover:bg-rose-400">
-                <XIcon />
-              </Button>
+          <div className="flex flex-col items-center w-full ">
+            <a
+              href="#"
+              className="relative md:left-[60%] md:-top-2 bg-red-300 text-slate-800  hover:bg-rose-400 text-xs p-1 pl-3 pr-3 rounded-xs"
+            >
+              X
             </a>
             <form onSubmit={handleSubmit}>
-              <h2 className="text-secondary mb-10 font-bold text-2xl">
+              <h2 className="text-secondary mb-10 font-bold text-md">
                 Add new {variant}
               </h2>
 
               <div className="grid text-white gap-4 w-full">
-                <label className="font-bold text-secondary text-xl">
+                <label className="font-bold text-secondary text-xs">
                   Amount
                 </label>
                 <input
@@ -257,7 +258,7 @@ function AddingModale({ variant }: AddingModaleProps) {
                       : savingFormData.amount
                   }`}
                   type="number"
-                  className="rounded-lg p-2 bg-slate-800 text-blue-300 font-bold"
+                  className="rounded-lg p-2 text-xs bg-slate-800 text-blue-300 font-bold"
                 />
 
                 {variant === "transaction"
@@ -268,7 +269,7 @@ function AddingModale({ variant }: AddingModaleProps) {
               <div className="flex gap-2 mt-4 w-full">
                 <a href="#" className="w-full ">
                   <Button
-                    className={`bg-green-300 text-slate-800 hover:bg-green-400 w-full mb-4  `}
+                    className={`bg-green-300 text-slate-800 hover:bg-green-400 w-full mb-4 text-xs `}
                     disabled={isAdding || isSavingAdding}
                     type="submit"
                   >
