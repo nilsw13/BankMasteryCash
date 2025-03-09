@@ -86,7 +86,13 @@ function AmountCardsSection() {
     <AnimatePresence>
       <motion.div className="grid gap-2  md:grid-cols-2 lg:grid-cols-4 ">
         {cards.map((card) => (
-          <motion.div className="">
+          <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{opacity: 1, y: 0}}
+          transition={{delay: 0.1 * card.id}}
+            
+          
+          className="">
             <DataCard
               key={card.id}
               title={card.title}

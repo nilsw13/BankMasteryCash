@@ -17,10 +17,10 @@ export function TransactionTable() {
     <AnimatePresence>
       <motion.div
         className="h-full"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 100 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 2, delay: 1 }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        
+        transition={{ delay: 0.6 }}
       >
         <Card className="bg-transparent border-white/20 min-h-[589.59px] flex flex-col">
           <CardHeader className="group">

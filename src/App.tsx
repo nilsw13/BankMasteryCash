@@ -12,13 +12,14 @@ function App() {
         <Toaster richColors closeButton />
       </div>
 
-      <div className=" overflow-hidden">
+      <motion.div 
+       initial={{ opacity: 0, y: 50 }}
+       animate={{ opacity: 1, y: 0 }}
+       transition={{ duration: 0.5 }}
+      className=" overflow-hidden">
         <AnimatePresence>
           <motion.header
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 100 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 2 }}
+          
             className=" w-screen bg-slate-700/20 md:mb-20 pt-6"
           >
             <HeaderDashboard />
@@ -32,7 +33,7 @@ function App() {
 
           <Footer />
         </AnimatePresence>
-      </div>
+      </motion.div>
     </>
   );
 }
