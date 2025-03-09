@@ -40,7 +40,7 @@ function Hero() {
             </div>
             <div className="flex flex-col md:flex-row gap-1 text-pink-300 ">
               <FileText />
-              <a href="">Exercise instructions</a>
+              <a href="https://github.com/Christophe-008/Bank-Mastery-Cash/blob/main/etape.md">Exercise instructions</a>
             </div>
           </motion.div>
 

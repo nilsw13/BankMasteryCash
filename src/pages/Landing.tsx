@@ -121,19 +121,22 @@ function Landing() {
         className="mt-12"
       >
         <div className="w-full bg-gradient-to-r from-blue-900/30 to-purple-900/30 rounded-xl p-4 border border-blue-500/30">
-          <div className="grid grid-cols-10">
-            <div className="w-28 h-28 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center flex-shrink-0 mt-6">
-              <span className="text-3xl font-bold">NW</span>
+          <div className="grid md:grid-cols-10 items-start gap-4">
+
+          <div className="flex justify-start md:justify-start">
+            <div className="md:w-28 md:h-28 w-16 h-16 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center flex-shrink-0 mt-6">
+              <span className="md:text-3xl text-xl font-bold">NW</span>
             </div>
-            <div className="col-span-8 ">
+            </div>
+            <div className="md:col-span-9 ">
               <Card className="bg-transparent border-none">
                 <CardTitle>
-                  <div className="flex align-middle items-center gap-4 ">
+                  <div className="flex flex-col md:flex-row md:items-center gap-4 ">
                     <h3 className="text-white text-2xl">
                       Full Stack Developper
                     </h3>
-                    <div className="flex bg-blue-500 p-1 rounded-md">
-                      <Briefcase className="text-white w-3 h-3 mr-1" />
+                    <div className="flex bg-blue-500 p-1 rounded-md w-fit md:pr-1 md:pl-1 pr-2 pl-2">
+                      <Briefcase className="text-white w-3 h-3 mr-1 self-center" />
                       <p className="text-xs text-white">
                         Looking for Apprenticeship
                       </p>
@@ -141,18 +144,18 @@ function Landing() {
                   </div>
                 </CardTitle>
 
-                <p className="text-gray-300">
+                <p className="text-gray-300 text-xs md:text-sm mt-4">
                   {" "}
                   Passionate about web development and new technologies, I am
                   looking for an apprenticeship opportunity to apply my skills
                   and continue learning in a professional environment.
                 </p>
 
-                <div className="flex gap-3 mt-3">
+                <div className="flex flex-wrap gap-3 mt-6">
                   {stacks.map((stack) => stack.name)}
                 </div>
 
-                <div className="flex gap-3 mt-6">
+                <div className="flex flex-wrap md:flex-row gap-3 mt-6">
                   {links.map((l) => (
                     <div key={l.id}>
                       <a href={l.link}>

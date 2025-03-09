@@ -8,7 +8,7 @@ function Specs() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.7 }}
-      className="grid grid-cols-3 gap-8"
+      className="grid md:grid-cols-3 gap-8"
     >
       <Card className="bg-[#0f1120] border border-gray-800">
         <CardHeader>

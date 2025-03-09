@@ -6,6 +6,7 @@ import { ArrowDown, ArrowUp, CreditCard, Landmark } from "lucide-react";
 import FilterToggles from "./FilterToggles";
 import { useTransaction } from "@/hooks/use-transactions";
 import AllElementsModale from "@/components/modales/AllElementsModale";
+import AddingModale from "@/components/modales/AddingModale";
 
 export function TransactionTable() {
   const { transactions, activeFilter, filterTransaction, resetFilter } =
@@ -25,7 +26,11 @@ export function TransactionTable() {
           <CardHeader className="group">
             <CardTitle className="font bold text-md text-blue-300/60 group-hover:text-blue-300 transition-all">
               <div className="flex justify-between">
+                <div className="flex gap-2">
                 <h3>Recent transactions</h3>
+                  <AddingModale variant="transaction"/>
+                </div>
+                
                 <div className="">
                   <FilterToggles
                     activeFilter={activeFilter}

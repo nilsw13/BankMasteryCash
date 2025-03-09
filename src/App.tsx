@@ -36,6 +36,3 @@ function App() {
 
 export default App;
 
-//<motion.header className=" w-screen bg-slate-700/20 md:mb-20 pt-6">
-//<HeaderDashboard />
-//</motion.header>

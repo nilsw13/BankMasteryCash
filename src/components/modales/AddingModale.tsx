@@ -208,7 +208,7 @@ function AddingModale({ variant }: AddingModaleProps) {
       <div className="text-sm flex items-center text-white">
         <a href={`${variant === "transaction" ? "#maModale" : "#maModale2"}`}>
           {variant === "transaction" ? (
-            <Button className="p-2 mr-10 w-10 h-10 bg-blue-500/20 hover:bg-blue-500/30 cursor-pointer rounded-full">
+            <Button className="p-2 mr-10 w-6 h-6 bg-blue-500/20 hover:bg-blue-500/30 cursor-pointer rounded-full">
               <PlusIcon className="text-blue-500" />
             </Button>
           ) : (

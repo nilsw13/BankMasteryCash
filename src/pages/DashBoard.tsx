@@ -13,7 +13,7 @@ function DashBoard() {
           {/* Section Cartes de montants */}
           <div>
             <Link to={"/"}>
-              <div className="relative -top-10 -left-10">
+              <div className="relative text-white -top-6 md:-top-10 md:-left-10">
                 <ArrowLeft />
               </div>
             </Link>
