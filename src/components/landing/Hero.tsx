@@ -69,7 +69,7 @@ function Hero() {
               <div className="bg-[#0f1120] rounded-xl overflow-hidden">
                 <div className="relative pt-[59.99%]">
                   <img
-                    src="src/assets/preview.png"
+                    src="src/public/preview.png"
                     alt="Bank Mastery Dashboard Preview"
                     className="absolute inset-0 w-full h-full object-cover object-center"
                   />
