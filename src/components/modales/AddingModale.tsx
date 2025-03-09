@@ -14,13 +14,12 @@ interface AddingModaleProps {
 }
 
 function AddingModale({ variant }: AddingModaleProps) {
-  const { addNewTransaction, addingError, isAdding  } = useTransaction();
+  const { addNewTransaction, addingError, isAdding } = useTransaction();
   const { newSavincAccount, savingAddingError, isSavingAdding } =
     useSavingAccount();
 
-
   const [shake, setShake] = useState(false);
-  const [doBorder, setDoBorder] = useState(false)
+  const [doBorder, setDoBorder] = useState(false);
 
   const [transactionFormData, setTransactionFormData] =
     useState<TransactionPostDto>({
@@ -48,27 +47,22 @@ function AddingModale({ variant }: AddingModaleProps) {
           name === "amount" || name === "rate" ? parseFloat(value) || 0 : value,
       }));
       console.log("value :", value);
-      
     } else {
       const { name, value } = e.target;
       setSavingFormData((prev) => ({
         ...prev,
         [name]:
           name === "amount" || name === "rate" ? parseFloat(value) || 0 : value,
-      
-          
       }));
     }
   };
 
-  const resetBorderAndRedirect = ()=> {
-    setDoBorder(false)
+  const resetBorderAndRedirect = () => {
+    setDoBorder(false);
     window.location.href = "#";
-  }
+  };
 
   const resetFormState = () => {
-   
-     
     if (variant === "transaction") {
       setTransactionFormData({
         amount: 0,
@@ -84,10 +78,8 @@ function AddingModale({ variant }: AddingModaleProps) {
       rate: 0,
     });
 
-    setTimeout(()=> setDoBorder(true), 900)
-    setTimeout(()=> resetBorderAndRedirect(), 2000)
-    
-
+    setTimeout(() => setDoBorder(true), 900);
+    setTimeout(() => resetBorderAndRedirect(), 2000);
   };
 
   const renderTransacFields = () => {
@@ -166,65 +158,50 @@ function AddingModale({ variant }: AddingModaleProps) {
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    
     if (variant === "transaction") {
       e.preventDefault();
-      
-      
+
       try {
         console.log("submitted transaction", transactionFormData);
 
         const requestBody = AddingTransactionSchema.parse(transactionFormData);
-        console.log("request body : " , requestBody);
+        console.log("request body : ", requestBody);
         addNewTransaction(requestBody);
-      }  catch (error) {
-        if (error instanceof z.ZodError){
+      } catch (error) {
+        if (error instanceof z.ZodError) {
           setShake(true);
-        toast.error(error.errors[0].message||"Error while adding transaction")
-        setTimeout(() => setShake(false), 500);
-        return;
-      } 
-
-    }
-     
-     
-
-      
-
-    
-      
-      
-
+          toast.error(
+            error.errors[0].message || "Error while adding transaction",
+          );
+          setTimeout(() => setShake(false), 500);
+          return;
+        }
+      }
     } else {
       e.preventDefault();
 
       console.log("Form data before validation:", savingFormData);
       console.log("rate type:", typeof savingFormData.rate);
       console.log("rate value:", savingFormData.rate);
-      
+
       try {
         const requestBody = AddingSavingSchema.parse(savingFormData);
-        console.log("request body : " , requestBody);
+        console.log("request body : ", requestBody);
         newSavincAccount(requestBody);
       } catch (error) {
         if (error instanceof z.ZodError) {
           setShake(true);
-          toast.error(error.errors[0].message || "Error while adding saving account");
+          toast.error(
+            error.errors[0].message || "Error while adding saving account",
+          );
           setTimeout(() => setShake(false), 500);
           return;
         }
       }
-
-     
-      
     }
 
-      resetFormState()
-
-    
+    resetFormState();
   };
-
-  
 
   return (
     <div>
@@ -253,9 +230,7 @@ function AddingModale({ variant }: AddingModaleProps) {
               : { x: 0 }
           }
           transition={{ duration: 0.5 }}
-          style={shake ? { border: "2px solid #FCA5A5" } : {}
-                  
-        }
+          style={shake ? { border: "2px solid #FCA5A5" } : {}}
           className={`w-auto pl-10 pr-10  bg-slate-800/70 h-auto m-4 p-4 rounded-lg md:w-fit ${doBorder ? "loading-border" : "no-border"} `}
         >
           <div className="flex flex-col items-center space-y-5 w-full ">
@@ -297,11 +272,12 @@ function AddingModale({ variant }: AddingModaleProps) {
                     disabled={isAdding || isSavingAdding}
                     type="submit"
                   >
-                    {isAdding || isSavingAdding  ? <LoaderCircle className="animate-spin transition-all"/> : "Submit"}
-
+                    {isAdding || isSavingAdding ? (
+                      <LoaderCircle className="animate-spin transition-all" />
+                    ) : (
+                      "Submit"
+                    )}
                   </Button>
-
-                  
                 </a>
               </div>
             </form>

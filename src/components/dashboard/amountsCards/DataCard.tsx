@@ -39,8 +39,6 @@ function DataCard({ title, amount, stats, totalAmount, icon }: DataCardProps) {
               </p>
             )}
 
-           
-
             <p className="mt-2 text-gray-500">{stats}</p>
           </CardContent>
         </Card>

@@ -112,10 +112,14 @@ function AllElementsModale({ variant }: AllElementsModaleProps) {
 
             <div className="mt-4 w-full grid grid-cols-2 gap-2">
               <a href="#" className="col-span-1">
-                <Button 
-                
-                onMouseOver={()=>toast.warning("This options is not available for the moment.. sorry ")}
-                className="w-[100%] bg-green-200 text-slate-800 hover:bg-green-200 font-bold">
+                <Button
+                  onMouseOver={() =>
+                    toast.warning(
+                      "This options is not available for the moment.. sorry ",
+                    )
+                  }
+                  className="w-[100%] bg-green-200 text-slate-800 hover:bg-green-200 font-bold"
+                >
                   Export in csv <File />
                 </Button>
               </a>

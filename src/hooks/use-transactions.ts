@@ -32,11 +32,13 @@ export const useTransaction = () => {
     try {
       const response = await api.get<Transansaction[]>("v1/transactions");
       console.log(response.data);
-     
+
       return response.data;
     } catch (error) {
       console.log("Erreur lors de la recuperation de la transaction", error);
-      toast.error("Error while fetching your transaction history.. Please retry later")
+      toast.error(
+        "Error while fetching your transaction history.. Please retry later",
+      );
       throw error;
     }
   };
@@ -45,15 +47,13 @@ export const useTransaction = () => {
     transactionDto: TransactionPostDto,
   ): Promise<Transansaction> => {
     try {
-
-      await new Promise(resolve => setTimeout(resolve, 2000))
-
+      await new Promise((resolve) => setTimeout(resolve, 2000));
 
       const response = await api.post("v1/add-transaction", transactionDto);
-      toast.success("Transaction successfully added")
+      toast.success("Transaction successfully added");
       return response.data;
     } catch (error) {
-      toast.error("Error while adding your transaction .. Please retry later")
+      toast.error("Error while adding your transaction .. Please retry later");
 
       console.error("Erreur lors de l'ajout de transaction:", error);
       throw error;
