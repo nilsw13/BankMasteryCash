@@ -1,9 +1,8 @@
 import "./App.css";
-import HeaderDashboard from "./components/dashboard/headerFooter/HeaderDashboard";
-import Footer from "./components/dashboard/headerFooter/Footer";
+
 import DashBoard from "./pages/DashBoard";
 import { motion, AnimatePresence } from "framer-motion";
-import { Toaster, toast } from "sonner";
+import { Toaster } from "sonner";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Landing from "./pages/Landing";
 

@@ -1,7 +1,6 @@
 import api from "@/api/axios";
 
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { resolve } from "path";
 import { useState } from "react";
 import { toast } from "sonner";
 

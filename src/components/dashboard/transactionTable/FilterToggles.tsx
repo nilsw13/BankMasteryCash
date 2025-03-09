@@ -1,10 +1,8 @@
 import { ArrowDown, ArrowUp, ArrowUpDown } from "lucide-react";
-import { useState } from "react";
 
 function FilterToggles({
   activeFilter,
   onFilterChange,
-  onFilterReset,
 }: {
   activeFilter: string;
   onFilterChange: (filter: string) => void;

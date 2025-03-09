@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { SavingAccountDto, useSavingAccount } from "@/hooks/use-savingAccount";
 import { TransactionPostDto, useTransaction } from "@/hooks/use-transactions";
-import { LoaderCircle, PlusIcon, XIcon } from "lucide-react";
+import {  LoaderCircle, PlusIcon } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { toast } from "sonner";
@@ -14,8 +14,8 @@ interface AddingModaleProps {
 }
 
 function AddingModale({ variant }: AddingModaleProps) {
-  const { addNewTransaction, addingError, isAdding } = useTransaction();
-  const { newSavincAccount, savingAddingError, isSavingAdding } =
+  const { addNewTransaction,isAdding } = useTransaction();
+  const { newSavincAccount,  isSavingAdding } =
     useSavingAccount();
 
   const [shake, setShake] = useState(false);

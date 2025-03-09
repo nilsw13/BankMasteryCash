@@ -1,5 +1,4 @@
 import { CreditCard } from "lucide-react";
-import React from "react";
 
 function Header() {
   return (

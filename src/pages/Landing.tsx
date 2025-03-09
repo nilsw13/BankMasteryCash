@@ -1,27 +1,19 @@
-import React from "react";
+
 import { motion } from "framer-motion";
 import {
-  ArrowRight,
-  BarChart3,
+
   Briefcase,
-  ChartArea,
-  ChartBar,
-  CreditCard,
-  EarthIcon,
-  File,
-  FileText,
+
   FolderOpen,
   Github,
-  IdCardIcon,
+
   Linkedin,
-  PiggyBank,
-  TrendingUp,
-  User2Icon,
+ 
 } from "lucide-react";
 import Header from "@/components/landing/Header";
 import { Button } from "@/components/ui/button";
 import Hero from "@/components/landing/Hero";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardTitle } from "@/components/ui/card";
 import Specs from "@/components/landing/Specs";
 import Separator from "@/components/landing/Separator";
 

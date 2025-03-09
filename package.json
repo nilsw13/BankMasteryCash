@@ -9,8 +9,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "format": "prettier --write \"src/**/*.{ts,tsx}\"",
-    "deploy": "gh-pages -d dist"
+    "format": "prettier --write \"src/**/*.{ts,tsx}\""
+    
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.3",

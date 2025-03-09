@@ -6,13 +6,18 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss(),],
-  base: "BankMasteryCash",
-  build: {
-    outDir: 'dist',
-  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
+
+  
+
+    // Configuration du build
+    build: {
+      outDir: 'dist', // Dossier de sortie de la build
+      assetsDir: 'assets', // Dossier des fichiers statiques
+      sourcemap: true, // Activation des sourcemaps pour le débogage
+    },
 })

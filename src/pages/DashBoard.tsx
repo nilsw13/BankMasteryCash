@@ -1,7 +1,6 @@
 import ChartSection from "@/components/dashboard/charts/ChartSection";
 
 import AmountCardsSection from "@/components/dashboard/amountsCards/AmountCardsSection";
-import { Card } from "@/components/ui/card";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 

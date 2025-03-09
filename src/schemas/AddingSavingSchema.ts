@@ -2,7 +2,7 @@ import { z } from "zod";
 
 const invalid_type_error = "Invalid type provided for this field";
 const required_error = "Those fields cannot be blank";
-const lenght_out_error = "Exceed max value";
+//const lenght_out_error = "Exceed max value";
 const xss_error = "Input contains potentially dangerous characters";
 const sql_error = "Input contains potentially malicious SQL patterns";
 
