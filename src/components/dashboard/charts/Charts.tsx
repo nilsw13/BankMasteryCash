@@ -18,9 +18,9 @@ function Charts() {
         
         transition={{ delay: 0.5 }}
       >
-        <Card className="w-full bg-transparent border-white/20 border md:h-[590px] group ">
+        <Card className="w-full bg-transparent border-white/20 border md:h-[500px] group ">
           <CardHeader>
-            <CardTitle className="font bold text-xl text-blue-300/60 group-hover:text-blue-300 transition-all">
+            <CardTitle className="font bold text-md text-blue-300/60 group-hover:text-blue-300 transition-all">
               Spending / Incomes overview
             </CardTitle>
             <CardDescription>
@@ -28,7 +28,7 @@ function Charts() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="mt-8 flex flex-col gap-10">
+            <div className="mt-2 flex flex-col gap-10">
               <div className=" flex flex-col md:flex-row ">
                 <LineChart />
               </div>

@@ -26,7 +26,7 @@ function AmountCardsSection() {
       stats: "+ 20% from last month", // need to change for dynamic data %
       icon: (
         <div className="bg-blue-500/30  rounded-full p-2">
-          <Wallet2 className="text-blue-600" />
+          <Wallet2 className="text-blue-600 w-4 h-4" />
         </div>
       ),
     },
@@ -38,7 +38,7 @@ function AmountCardsSection() {
       stats: "this month",
       icon: (
         <div className="bg-green-500/30  rounded-full p-2">
-          <ArrowUp className="text-green-600" />
+          <ArrowUp className="text-green-600 w-4 h-4" />
         </div>
       ),
     },
@@ -50,7 +50,7 @@ function AmountCardsSection() {
       stats: "this month",
       icon: (
         <div className="bg-red-500/30  rounded-full p-2">
-          <ArrowDown className="text-red-600" />
+          <ArrowDown className="text-red-600 w-4 h-4" />
         </div>
       ),
     },
@@ -62,7 +62,7 @@ function AmountCardsSection() {
       stats: " + 12, 3% from last month", // need to change for dynamic data %
       icon: (
         <div className="bg-blue-500/30  rounded-full p-2">
-          <VaultIcon className="text-blue-600" />
+          <VaultIcon className="text-blue-600 w-4 h-4" />
         </div>
       ),
     },
@@ -84,7 +84,7 @@ function AmountCardsSection() {
 
   return (
     <AnimatePresence>
-      <motion.div className="grid gap-2  md:grid-cols-2 lg:grid-cols-4 ">
+      <motion.div className="grid gap-4  md:grid-cols-2 lg:grid-cols-4 ">
         {cards.map((card) => (
           <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -92,7 +92,7 @@ function AmountCardsSection() {
           transition={{delay: 0.1 * card.id}}
             
           
-          className="">
+          className="col-span-1">
             <DataCard
               key={card.id}
               title={card.title}

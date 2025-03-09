@@ -10,7 +10,7 @@ function HeaderDashboard() {
           <img src="https://i.pravatar.cc/300" alt="Profil" />
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
-        <h1 className="text-blue-300/60 group-hover:text-blue-300 md:text-3xl font-bold text-xs transition-all">
+        <h1 className="text-blue-300/60 group-hover:text-blue-300 md:text-lg font-bold text-xs transition-all">
           Dashboard
         </h1>
       </div>

@@ -106,7 +106,7 @@ function IncomeLineChart() {
   };
 
   return (
-    <div className="text-white w-full bg-slate-800/75 h-[400px] mt-10 p-4  rounded-lg shadow-lg ">
+    <div className="text-white w-full bg-slate-800/75 h-[350px]    rounded-lg shadow-lg ">
       <Line data={data} options={options} />
     </div>
   );

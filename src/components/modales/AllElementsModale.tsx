@@ -83,12 +83,12 @@ function AllElementsModale({ variant }: AllElementsModaleProps) {
 
   return (
     <div>
-      <div className="text-4xl text-white">
+      <div className="text-md text-white">
         <a
           href={`${variant === "transaction" ? "#maModale3" : "#maModale4"}`}
           className="mt-16"
         >
-          <Button className=" mr-10  h-10 border mx-auto p-6   w-full bg-blue-900/20  hover:bg-blue-900/40 transition-all  border-white/20 text-blue-600 hover:text-blue-400 ">
+          <Button className=" mr-10  h-10 border mx-auto p-1 text-xs  w-full bg-blue-900/20  hover:bg-blue-900/40 transition-all  border-white/20 text-blue-600 hover:text-blue-400 ">
             See more
           </Button>
         </a>

@@ -14,8 +14,8 @@ function App() {
 
       <motion.div 
        initial={{ opacity: 0, y: 50 }}
-       animate={{ opacity: 1, y: 0 }}
-       transition={{ duration: 0.5 }}
+           animate={{ opacity: 1, y: 0 }}
+           transition={{ duration: 0.5 }}
       className=" overflow-hidden">
         <AnimatePresence>
           <motion.header
@@ -25,8 +25,8 @@ function App() {
             <HeaderDashboard />
           </motion.header>
 
-          <motion.div id="app " className="overflow-x-hidden md:p-4 h-screen">
-            <div className="scale-90">
+          <motion.div id="app " className="overflow-x-hidden overflow-y-hidden  h-screen">
+            <div className="container mx-auto px-4 py-12">
               <DashBoard />
             </div>
           </motion.div>

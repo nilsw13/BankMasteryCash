@@ -212,7 +212,7 @@ function AddingModale({ variant }: AddingModaleProps) {
               <PlusIcon className="text-blue-500" />
             </Button>
           ) : (
-            <PlusIcon className="w-8 h-8 border-2 rounded-sm p-1 bg-blue-900/20  hover:bg-blue-900/20  border-white/20 text-blue-600" />
+            <PlusIcon className="w-6 h-6 border-2 rounded-sm p-1 bg-blue-900/20  hover:bg-blue-900/20  border-white/20 text-blue-600" />
           )}
         </a>
       </div>
