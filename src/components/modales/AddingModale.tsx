@@ -47,12 +47,16 @@ function AddingModale({ variant }: AddingModaleProps) {
         [name]:
           name === "amount" || name === "rate" ? parseFloat(value) || 0 : value,
       }));
+      console.log("value :", value);
+      
     } else {
       const { name, value } = e.target;
       setSavingFormData((prev) => ({
         ...prev,
         [name]:
           name === "amount" || name === "rate" ? parseFloat(value) || 0 : value,
+      
+          
       }));
     }
   };
@@ -150,6 +154,9 @@ function AddingModale({ variant }: AddingModaleProps) {
 
         <label className="font-bold text-secondary text-xl">Rate</label>
         <input
+          onChange={handleChange}
+          name="rate"
+          value={savingFormData.rate}
           type="number"
           step={0.1}
           className="rounded-lg p-2 bg-slate-800 text-blue-300 font-bold"
@@ -190,6 +197,10 @@ function AddingModale({ variant }: AddingModaleProps) {
 
     } else {
       e.preventDefault();
+
+      console.log("Form data before validation:", savingFormData);
+      console.log("rate type:", typeof savingFormData.rate);
+      console.log("rate value:", savingFormData.rate);
       
       try {
         const requestBody = AddingSavingSchema.parse(savingFormData);
