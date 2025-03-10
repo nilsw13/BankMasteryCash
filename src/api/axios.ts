@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const apiUrl = "http://localhost:8080";
+const apiUrl = "bankmasterycash-api-production.up.railway.app";
 console.log("api url utilisé" + apiUrl);
 
 const api = axios.create({
